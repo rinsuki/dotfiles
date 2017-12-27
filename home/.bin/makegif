@@ -1,0 +1,3 @@
+#!/bin/bash
+ffmpeg -i "$1" -vf palettegen -y /tmp/palette.png
+ffmpeg -i "$1" -i /tmp/palette.png -filter_complex paletteuse -r 30 "$2"

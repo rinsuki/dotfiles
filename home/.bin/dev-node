@@ -1,0 +1,14 @@
+#!/bin/sh
+set -e
+while [ ! -f package.json ]
+do
+    if [ "$(pwd)" = "/" ] ; then
+        echo "not found packagae.json"
+        exit 1
+    fi
+    cd ..
+done
+echo $(pwd)
+DIRPOINT=$(dev-mountpoint /home/user/build/node_modules)
+ln -s $DIRPOINT node_modules
+ssh dev mkdir -p $DIRPOINT

@@ -1,0 +1,5 @@
+#!/usr/bin/env python3
+import os
+import hashlib
+SANDBOXDIR = os.path.join(os.environ.get("TEMP", "/tmp"), "sandbox_"+hashlib.sha512(open("/dev/urandom", "rb").read(16)).hexdigest()[:16])
+print(SANDBOXDIR)

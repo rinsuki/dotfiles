@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -e
+MOUNTPOINT=$(dev-mountpoint)
+ssh -t dev 'cd '"$MOUNTPOINT"' && bash'

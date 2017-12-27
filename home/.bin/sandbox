@@ -1,0 +1,5 @@
+#!/bin/sh
+SANDBOXDIR=$(sandbox-gen)
+mkdir $SANDBOXDIR
+cd $SANDBOXDIR && SANDBOX=$SANDBOXDIR bash
+rm -rf $SANDBOXDIR
