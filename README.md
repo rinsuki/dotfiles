@@ -23,7 +23,7 @@ WIP
 - `sandbox` - /tmp下に一時的なディレクトリを掘ってbashを起動します
 - `randomgen` - `/dev/urandom`を使って適当な文字列を生成し、クリップボードにコピーします(macOS only)
 - `SECRET ` のprefixを付けたコマンドは.bash_historyに残らなくなります
-
+    - usage: `SECRET curl -H "Access-Token: shibuyarin" https://api.secret.example.com/my/profile`
 ## その他
 
 - `pacman` / `apt` / `apt-get` / `systemctl` でsudoを書く手間を無くします
