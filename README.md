@@ -14,7 +14,7 @@ Python3.xが必要です
 
 ## 試用
 
-WIP
+`Dockerfile` からコンテナを`build`して`run`すれば試用できます
 
 # 機能
 
