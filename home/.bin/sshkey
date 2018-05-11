@@ -1,2 +1,2 @@
-#!/bin/sh
+#!/bin/bash
 ssh-keygen -t ecdsa -b 521 -f ~/.ssh/\$0_ecdsa
