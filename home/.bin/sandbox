@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 SANDBOXDIR=$(sandbox-gen)
 mkdir $SANDBOXDIR
 cd $SANDBOXDIR && SANDBOX=$SANDBOXDIR bash
