@@ -13,6 +13,7 @@ export HISTIGNORE="fg*:bg*:history*:SECRET *"
 alias SECRET=
 
 if [ $UNAME = "Darwin" ]; then
+	export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
 	alias ls="ls -G"
 else
 	alias ls="ls --color=auto"
@@ -73,3 +74,7 @@ if type virtualenvwrapper.sh >/dev/null 2>&1; then
 	export WORKON_HOME=~/.virtualenvs
 fi
 
+
+
+# added by travis gem
+[ -f /Users/user/.travis/travis.sh ] && source /Users/user/.travis/travis.sh
