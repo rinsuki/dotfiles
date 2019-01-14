@@ -55,7 +55,7 @@ fi
 
 ## sudo必要系を自動で付ける
 if [ "$(uname)" = "Linux" ]; then
-    alias apt = "sudo apt"
+    alias apt="sudo apt"
 fi
 
 # その他
