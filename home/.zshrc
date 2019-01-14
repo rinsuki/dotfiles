@@ -3,7 +3,9 @@
 autoload -Uz colors
 colors
 export PROMPT="%{${fg[green]}%}%~%{${reset_color}%} $ "
-
+if [ ! -z $SSH_TTY ]; then
+	export PROMPT="[$(hostname -fs)] $PROMPT"
+fi
 # 履歴周り
 
 export HISTFILE=${HOME}/.zsh_history
