@@ -6,7 +6,6 @@ colors
 PROMPT_COLOR="${fg[green]}"
 if [ $USER = "root" ]; then
     PROMPT_COLOR="${fg[red]}"
-    echo a
 fi
 export PROMPT="%{${PROMPT_COLOR}%}%~%{${reset_color}%} $ "
 if [ ! -z $SSH_TTY ]; then
