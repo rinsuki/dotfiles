@@ -47,6 +47,11 @@ if [ "$(uname)" = "Darwin" ]; then
 	alias systemctl="brew services"
 fi
 
+## sudo必要系を自動で付ける
+if [ "$(uname)" = "Linux" ]; then
+    alias apt = "sudo apt"
+fi
+
 # その他
 
 ## typoしたコマンドの提案
