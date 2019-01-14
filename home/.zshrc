@@ -2,7 +2,13 @@
 
 autoload -Uz colors
 colors
-export PROMPT="%{${fg[green]}%}%~%{${reset_color}%} $ "
+
+PROMPT_COLOR="${fg[green]}"
+if [ $USER = "root" ]; then
+    PROMPT_COLOR="${fg[red]}"
+    echo a
+fi
+export PROMPT="%{${PROMPT_COLOR}%}%~%{${reset_color}%} $ "
 if [ ! -z $SSH_TTY ]; then
 	export PROMPT="[$(hostname -fs)] $PROMPT"
 fi
