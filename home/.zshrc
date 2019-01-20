@@ -57,6 +57,11 @@ if [ "$(uname)" = "Linux" ]; then
     alias apt="sudo apt"
 fi
 
+## ghqのインクリメンタルサーチ
+if type ghq >/dev/null 2>&1; then
+	alias g='cd $(ghq list --full-path | peco)'
+fi
+
 # その他
 
 ## typoしたコマンドの提案
