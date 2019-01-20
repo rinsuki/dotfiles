@@ -11,4 +11,6 @@ fi
 export PATH=$HOME/.rbenv/shims:$PATH
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
+export PATH=$HOME/.bin:$PATH
+export PATH=$HOME/.bin/platforms/$(uname | tr '[:upper:]' '[:lower:]'):$PATH
 export EDITOR=nano
