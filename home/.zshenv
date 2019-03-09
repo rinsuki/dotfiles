@@ -8,9 +8,20 @@ if [ "$(uname)" = "Darwin" ]; then
     fi
 fi
 
+export VITASDK=$HOME/.vitasdk
+export THEOS=$HOME/.theos
+
+export PIPENV_VENV_IN_PROJECT=1
+export PYENV_ROOT="$HOME/.pyenv"
+
 export PATH=$HOME/.rbenv/shims:$PATH
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
 export PATH=$HOME/.bin:$PATH
 export PATH=$HOME/.bin/platforms/$(uname | tr '[:upper:]' '[:lower:]'):$PATH
+export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:$VITASDK/bin
+export PATH=$PYENV_ROOT/bin:$PATH
 export EDITOR=nano
+
+source ~/.zshenv.private
