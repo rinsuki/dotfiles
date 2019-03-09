@@ -74,3 +74,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 ### heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/user/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
+
+## direnv
+
+test direnv && eval "$(direnv hook zsh)"
