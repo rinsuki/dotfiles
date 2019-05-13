@@ -59,7 +59,12 @@ fi
 
 ## ghqのインクリメンタルサーチ
 if type ghq >/dev/null 2>&1; then
-	alias g='cd $(ghq list --full-path | peco)'
+    function g() {
+        local cdpath=$(ghq list --full-path | fzf-tmux --reverse +m)
+        if [ -n "$cdpath" ]; then
+            cd $cdpath
+        fi
+    }
 fi
 
 # その他
@@ -78,3 +83,7 @@ function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 ## direnv
 
 test direnv && eval "$(direnv hook zsh)"
+
+## fzf
+
+test -f ~/.fzf.zsh && source ~/.fzf.zsh
