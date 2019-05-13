@@ -10,6 +10,7 @@ fi
 
 export VITASDK=$HOME/.vitasdk
 export THEOS=$HOME/.theos
+export HAXE_STD_PATH="/usr/local/lib/haxe/std"
 
 export PIPENV_VENV_IN_PROJECT=1
 export PYENV_ROOT="$HOME/.pyenv"
@@ -22,6 +23,8 @@ export PATH=$HOME/.bin/platforms/$(uname | tr '[:upper:]' '[:lower:]'):$PATH
 export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$VITASDK/bin
 export PATH=$PYENV_ROOT/bin:$PATH
+export PATH=$PATH:$HOME/work/chromium.googlesource.com/chromium/tools/depot_tools
+export PATH=$PATH:$HOOME/.composer/vendor/bin
 export EDITOR=nano
 
 source ~/.zshenv.private
