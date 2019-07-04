@@ -21,7 +21,7 @@ defaults write com.apple.dock persistent-apps -array
 add-persistent-app "$SYSTEM_APPS/Launchpad.app"
 add-persistent-app "$SYSTEM_APPS/QuickTime Player.app"
 add-persistent-app "/Applications/Safari.app"
-add-persistent-app "/Applications/Firefox Developer Edition.app"
+add-persistent-app "/Applications/Firefox.app"
 add-persistent-app "/Applications/Thunderbird.app"
 add-persistent-app "$SYSTEM_APPS/Messages.app"
 add-persistent-app "$SYSTEM_APPS/Utilities/Terminal.app"
