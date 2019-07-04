@@ -4,6 +4,12 @@ function add-persistent-app () {
     defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>file://$1</string><key>_CFURLStringType</key><integer>15</integer></dict></dict></dict>"
 }
 
+if [ -d "/System/Applications" ]; then
+    SYSTEM_APPS="/System/Applications"
+else
+    SYSTEM_APPS="/Applications"
+fi
+
 defaults write com.apple.dock autohide -bool false
 defaults write com.apple.dock tilesize -int 32
 defaults write com.apple.dock magnification -bool true
@@ -12,17 +18,17 @@ defaults write com.apple.dock orientation -string "left"
 defaults write com.apple.dock show-recents -bool false
 defaults write com.apple.dock recent-apps -array
 defaults write com.apple.dock persistent-apps -array
-add-persistent-app /System/Applications/Launchpad.app
-add-persistent-app "/System/Applications/QuickTime Player.app"
-add-persistent-app /Applications/Safari.app
+add-persistent-app "$SYSTEM_APPS/Launchpad.app"
+add-persistent-app "$SYSTEM_APPS/QuickTime Player.app"
+add-persistent-app "/Applications/Safari.app"
 add-persistent-app "/Applications/Firefox Developer Edition.app"
 add-persistent-app "/Applications/Thunderbird.app"
-add-persistent-app "/System/Applications/Messages.app"
-add-persistent-app "/System/Applications/Utilities/Terminal.app"
-add-persistent-app "/System/Applications/Utilities/Activity Monitor.app"
-add-persistent-app "/System/Applications/System Preferences.app"
-if [ -d /System/Applications/Music.app ]; then
-    add-persistent-app "/System/Applications/Music.app"
+add-persistent-app "$SYSTEM_APPS/Messages.app"
+add-persistent-app "$SYSTEM_APPS/Utilities/Terminal.app"
+add-persistent-app "$SYSTEM_APPS/Utilities/Activity Monitor.app"
+add-persistent-app "$SYSTEM_APPS/System Preferences.app"
+if [ -d "$SYSTEM_APPS/Music.app" ]; then
+    add-persistent-app "$SYSTEM_APPS/Music.app"
 else
     add-persistent-app "/Applications/iTunes.app"
 fi
