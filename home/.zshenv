@@ -24,7 +24,8 @@ export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$VITASDK/bin
 export PATH=$PYENV_ROOT/bin:$PATH
 export PATH=$PATH:$HOME/work/chromium.googlesource.com/chromium/tools/depot_tools
-export PATH=$PATH:$HOOME/.composer/vendor/bin
+export PATH=$PATH:$HOME/.composer/vendor/bin
+export PATH=$PATH:$HOME/flutter/bin
 export EDITOR=nano
 
 source ~/.zshenv.private
