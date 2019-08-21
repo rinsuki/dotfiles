@@ -67,6 +67,10 @@ if type ghq >/dev/null 2>&1; then
     }
 fi
 
+## 雑多
+
+alias be="bundle exec"
+
 # その他
 
 ## typoしたコマンドの提案
@@ -78,6 +82,8 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 ### heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/user/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+
+## git ignore
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
 ## direnv
@@ -87,3 +93,7 @@ test direnv && eval "$(direnv hook zsh)"
 ## fzf
 
 test -f ~/.fzf.zsh && source ~/.fzf.zsh
+
+## asdf
+source ~/.asdf/asdf.sh
+source ~/.asdf/completions/asdf.bash
