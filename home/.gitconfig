@@ -1,0 +1,22 @@
+[core]
+	excludesfile = $HOME/.gitignore_global
+	precomposeUnicode = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[url "git@github.com:"]
+	pushInsteadOf = https://github.com/
+[url "git@gitlab.com:"]
+	insteadOf = https://gitlab.com/
+[url "git@git.pleroma.social:"]
+	insteadOf = https://git.pleroma.social/
+[ghq]
+	root = ~/work
+	root = ~/go/src
+[pull]
+	rebase = true
+[include]
+	path = ~/.gitconfig.local
