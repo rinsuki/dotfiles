@@ -28,4 +28,6 @@ export PATH=$PATH:$HOME/.composer/vendor/bin
 export PATH=$PATH:$HOME/flutter/bin
 export EDITOR=nano
 
-source ~/.zshenv.private
+if [ -f ~/.zshenv.private ]; then
+    source ~/.zshenv.private
+fi
