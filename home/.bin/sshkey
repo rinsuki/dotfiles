@@ -1,2 +1,2 @@
 #!/bin/bash
-ssh-keygen -t ed25519 -f ~/.ssh/$1_ecdsa
+ssh-keygen -t ed25519 -f ~/.ssh/$1_ed25519
