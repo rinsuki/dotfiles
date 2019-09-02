@@ -20,3 +20,6 @@
 	rebase = true
 [include]
 	path = ~/.gitconfig.local
+[user]
+	name = rinsuki
+	email = 428rinsuki+git@gmail.com

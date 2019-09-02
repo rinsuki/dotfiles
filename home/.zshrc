@@ -1,7 +1,8 @@
 # プロンプト
 
-autoload -Uz colors
+autoload -Uz colors compinit
 colors
+compinit
 
 PROMPT_COLOR="${fg[green]}"
 if [ $USER = "root" ]; then
