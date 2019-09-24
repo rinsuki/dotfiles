@@ -1,5 +1,5 @@
 [core]
-	excludesfile = $HOME/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	precomposeUnicode = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
