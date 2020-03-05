@@ -97,4 +97,3 @@ test -f ~/.fzf.zsh && source ~/.fzf.zsh
 
 ## asdf
 source ~/.asdf/asdf.sh
-source ~/.asdf/completions/asdf.bash
