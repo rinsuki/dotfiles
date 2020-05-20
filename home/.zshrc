@@ -1,3 +1,7 @@
+# bindkey
+
+bindkey "^[[3~" delete-char
+
 # プロンプト
 
 autoload -Uz colors compinit
@@ -12,6 +16,7 @@ export PROMPT="%{${PROMPT_COLOR}%}%~%{${reset_color}%} $ "
 if [ ! -z $SSH_TTY ]; then
 	export PROMPT="[$(hostname -fs)] $PROMPT"
 fi
+
 # 履歴周り
 
 export HISTFILE=${HOME}/.zsh_history

@@ -15,17 +15,26 @@ export HAXE_STD_PATH="/usr/local/lib/haxe/std"
 export PIPENV_VENV_IN_PROJECT=1
 export PYENV_ROOT="$HOME/.pyenv"
 
+# PATH の最初に追加する勢
 export PATH=$HOME/.rbenv/shims:$PATH
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
 export PATH=$HOME/.bin:$PATH
 export PATH=$HOME/.bin/platforms/$(uname | tr '[:upper:]' '[:lower:]'):$PATH
+export PATH=$PYENV_ROOT/bin:$PATH
+
+# PATH の最後に追加する勢
 export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$VITASDK/bin
-export PATH=$PYENV_ROOT/bin:$PATH
 export PATH=$PATH:$HOME/work/chromium.googlesource.com/chromium/tools/depot_tools
 export PATH=$PATH:$HOME/.composer/vendor/bin
 export PATH=$PATH:$HOME/flutter/bin
+
+if [ -d /Applications/SeKey.app ]; then
+    export PATH=$PATH:/Applications/SeKey.app/Contents/MacOS
+    export SSH_AUTH_SOCK=$HOME/.sekey/ssh-agent.ssh
+fi
+
 export EDITOR=nano
 
 if [ -f ~/.zshenv.private ]; then
