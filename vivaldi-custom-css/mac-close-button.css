@@ -1,0 +1,14 @@
+.tab .close {
+  order: 100 !important;
+  margin-right: 6px;
+}
+
+/* Show tab favicon when mouse over */
+.favicon {
+  display: flex !important;
+}
+
+.tab-position .tab:not(:hover):not(.pinned) .close {
+	display: flex !important;
+	background: transparent;
+}
