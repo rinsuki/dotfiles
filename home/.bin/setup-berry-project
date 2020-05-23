@@ -1,0 +1,36 @@
+#!/bin/bash
+set -ue
+
+assert-file-not-exists .yarnrc ".yarnrc already exists"
+assert-file-not-exists .yarn ".yarn directory already exists"
+assert-file-not-exists package.json "package.json already exists"
+assert-file-not-exists yarn.lock "yarn.lock already exists"
+
+echo "Setup Yarn V2 (berry) Project in current directory ($(PWD))."
+echo -n "OK? [y/N]: "
+read ANS
+if [ "$ANS" != y ]; then
+    exit 1
+fi
+echo "Start!"
+
+set -x
+
+git init
+yarn set version berry
+echo "enableGlobalCache: true" >> .yarnrc.yml
+yarn init
+yarn add -D typescript eslint prettier @rinsuki/eslint-config @rinsuki/prettier-config @yarnpkg/pnpify
+echo '{"extends": "@rinsuki"}' > .eslintrc.json
+echo 'module.exports = require("@rinsuki/prettier-config")' > .prettierrc
+yarn tsc --init
+yarn pnpify --sdk
+echo """dist
+
+# yarn v2
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+.pnp.*
+.vscode
+""" > .gitignore
