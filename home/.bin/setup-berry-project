@@ -22,7 +22,7 @@ echo "enableGlobalCache: true" >> .yarnrc.yml
 yarn init
 yarn add -D typescript eslint prettier @rinsuki/eslint-config @rinsuki/prettier-config @yarnpkg/pnpify
 echo '{"extends": "@rinsuki"}' > .eslintrc.json
-echo 'module.exports = require("@rinsuki/prettier-config")' > .prettierrc
+echo 'module.exports = require("@rinsuki/prettier-config")' > .prettierrc.js
 yarn tsc --init
 yarn pnpify --sdk
 echo """dist
