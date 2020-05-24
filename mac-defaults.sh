@@ -11,7 +11,7 @@ else
 fi
 
 defaults write com.apple.dock autohide -bool false
-defaults write com.apple.dock tilesize -int 32
+defaults write com.apple.dock tilesize -int 24
 defaults write com.apple.dock magnification -bool true
 defaults write com.apple.dock largesize -int 64
 defaults write com.apple.dock orientation -string "left"
@@ -22,7 +22,8 @@ add-persistent-app "$SYSTEM_APPS/Launchpad.app"
 add-persistent-app "$SYSTEM_APPS/QuickTime Player.app"
 add-persistent-app "/Applications/Safari.app"
 add-persistent-app "/Applications/Firefox.app"
-add-persistent-app "/Applications/Thunderbird.app"
+add-persistent-app "/Applications/NetNewsWire.app"
+add-persistent-app "$SYSTEM_APPS/Mail.app"
 add-persistent-app "$SYSTEM_APPS/Messages.app"
 add-persistent-app "$SYSTEM_APPS/Utilities/Terminal.app"
 add-persistent-app "$SYSTEM_APPS/Utilities/Activity Monitor.app"
@@ -32,11 +33,11 @@ if [ -d "$SYSTEM_APPS/Music.app" ]; then
 else
     add-persistent-app "/Applications/iTunes.app"
 fi
+add-persistent-app "/Applications/Spotify.app"
 add-persistent-app "/Applications/Xcode.app"
-add-persistent-app "/Volumes/XcodeBeta/Applications/Xcode-beta.app"
 add-persistent-app "/Applications/Visual Studio Code.app"
 add-persistent-app "/Applications/CotEditor.app"
-add-persistent-app "/Applications/Sourcetree.app"
+add-persistent-app "/Applications/Slack.app"
 add-persistent-app "/Applications/Discord.app"
 
 killall Dock
