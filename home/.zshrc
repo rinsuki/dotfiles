@@ -84,7 +84,7 @@ setopt correct
 
 ## completions
 
-fpath=(/usr/local/share/zsh-completions $fpath)
+fpath=($HOME/.local/share/zsh-completions /usr/local/share/zsh-completions $fpath)
 
 ### heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/user/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
