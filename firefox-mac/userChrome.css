@@ -1,0 +1,64 @@
+/* This userChrome.css works ONLY macOS. some styles are broken in Other OS (like Windows). */
+
+/* 上のタブバーを消してアドレスバーのところをタイトルバーと融合 */
+
+#titlebar {
+    display: inline;
+    position: absolute;
+    height: 100%;
+}
+
+#TabsToolbar {
+    height: 100%;
+}
+
+#TabsToolbar > *:not(.titlebar-buttonbox-container) {
+    display: none;
+}
+#TabsToolbar > .titlebar-buttonbox-container {
+    margin-right: 12px;
+}
+
+#nav-bar {
+    flex: 1;
+    background: transparent !important;
+    padding-left: 4px;
+}
+
+html:not([OSXLionFullscreen]) #nav-bar {
+    padding-left: 76px;
+}
+
+/* サイドバーのヘッダーを小さく */
+
+#sidebar-header {
+    font-size: 1em !important;
+    padding: 0 !important;
+}
+
+#PersonalToolbar {
+    background: transparent !important;
+}
+
+#PersonalToolbar toolbarbutton {
+    padding: 8px;
+}
+
+/* タイトルバーをMacのスケスケに */
+#nav-bar:-moz-lwtheme-darktext {
+    -moz-appearance: -moz-mac-vibrancy-light !important;
+}
+
+#nav-bar:-moz-lwtheme-brighttext {
+    -moz-appearance: -moz-mac-vibrancy-dark !important;
+}
+
+/* アドレスバーの背景透過 */
+#urlbar:not([open]) #urlbar-background {
+    opacity: 0.4;
+}
+
+/* TSTだったらサイドバーのヘッダを隠す */
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
+    display: none;
+}
