@@ -36,3 +36,12 @@ Python3.xが必要です
 - `~/Documents/Wine/main` が存在する場合は`$WINEPREFIX`にそれを設定します
 - `WINEARCH` を `win32` に設定します
 - `~/.bashrc_private` が存在する場合はsourceで読み込みます
+
+
+# その他ファイル
+
+- Mac用
+    - `mac-hidutil-replace-henkan-key.app`
+        - hidutilでPCの無変換/変換キーを英数/かなキーに置換します。システム環境設定→ユーザーとグループ→ログイン項目に追加して使用します
+    - `mac-defaults.sh`
+        - 各アプリの設定の一部を自動で設定します
