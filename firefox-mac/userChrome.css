@@ -45,6 +45,10 @@ html:not([OSXLionFullscreen]) #nav-bar {
 }
 
 /* タイトルバーをMacのスケスケに */
+:root {
+    background: transparent !important;
+}
+
 #nav-bar:-moz-lwtheme-darktext {
     -moz-appearance: -moz-mac-vibrancy-light !important;
 }
