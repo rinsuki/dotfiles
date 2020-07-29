@@ -26,7 +26,7 @@
         padding-left: 4px;
     }
 
-    html:not([OSXLionFullscreen]) #nav-bar {
+    html[tabsintitlebar="true"]:not([OSXLionFullscreen]) #nav-bar {
         padding-left: 76px;
     }
 
