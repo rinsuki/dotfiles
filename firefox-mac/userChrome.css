@@ -49,12 +49,23 @@ html:not([OSXLionFullscreen]) #nav-bar {
     background: transparent !important;
 }
 
-#nav-bar:-moz-lwtheme-darktext {
+#nav-bar {
     -moz-appearance: -moz-mac-vibrancy-light !important;
 }
 
-#nav-bar:-moz-lwtheme-brighttext {
+* > #nav-bar:-moz-lwtheme-brighttext {
     -moz-appearance: -moz-mac-vibrancy-dark !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    #nav-bar {
+        -moz-appearance: -moz-mac-vibrancy-dark !important;
+    }
+}
+
+#TabsToolbar {
+    -moz-appearance: none !important;
+    background: transparent !important;
 }
 
 /* アドレスバーの背景透過 */
