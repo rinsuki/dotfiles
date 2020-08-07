@@ -8,6 +8,8 @@ if [ "$(uname)" = "Darwin" ]; then
     fi
 fi
 
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
 export VITASDK=$HOME/.vitasdk
 export THEOS=$HOME/.theos
 export HAXE_STD_PATH="/usr/local/lib/haxe/std"
