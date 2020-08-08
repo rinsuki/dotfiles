@@ -6,7 +6,6 @@ bindkey "^[[3~" delete-char
 
 autoload -Uz colors compinit
 colors
-compinit
 
 PROMPT_COLOR="${fg[green]}"
 if [ $USER = "root" ]; then
@@ -85,6 +84,7 @@ setopt correct
 ## completions
 
 fpath=($HOME/.asdf/completions $HOME/.local/share/zsh-completions /usr/local/share/zsh-completions $fpath)
+compinit
 
 ### heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/user/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
