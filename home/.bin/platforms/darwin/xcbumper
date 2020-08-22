@@ -1,0 +1,16 @@
+#!/bin/bash
+set -e
+if [[ `git status --porcelain` ]]; then
+	git status
+	echo
+	echo "You have a some local changes."
+	echo "Please commit before execute xcbumper"
+fi
+
+xcrun agvtool bump -all
+NEW_VERSION="$(xcrun agvtool what-marketing-version -terse1)b$(xcrun agvtool what-version -terse)"
+echo $NEW_VERSION
+git add -A .
+git commit -m ":rocket: $NEW_VERSION"
+git tag $NEW_VERSION
+echo "Time to git push!"
