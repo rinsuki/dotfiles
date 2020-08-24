@@ -1,10 +1,10 @@
 #!/bin/bash
 set -e
-if [[ `git status --porcelain` ]]; then
+if ! git diff --exit-code --quiet HEAD; then
 	git status
 	echo
 	echo "You have a some local changes."
-	echo "Please commit before execute xcbumper"
+	echo "Please commit changes before execute xcbumper"
 fi
 
 xcrun agvtool bump -all
