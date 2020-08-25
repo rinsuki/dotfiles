@@ -46,3 +46,9 @@ Firefoxのプロフィール下の`chrome/userChrome.css`にシンボリック�
 ### `./vivaldi-custom-css/*`
 
 Vivaldi用のカスタムCSSですが、もうVivaldiを使っていないのでメンテナンスされていません
+
+### `win-uninstall-apps-vm.bat`
+
+Windows 10 の VM セットアップ時に、VMでは通常使わないアプリを消すためのバッチ/PS1ファイルです。
+削除するアプリの内容は`.ps1`ファイルの中身を見てください。
+`.bat`と`.ps1`を同じディレクトリに入れて`.bat`を起動してください。
