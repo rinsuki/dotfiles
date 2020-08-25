@@ -1,4 +1,5 @@
 Set-PSDebug -Trace 1
+Get-AppxPackage -allusers Microsoft.549981C3F5F10 | Remove-AppxPackage
 Get-AppxPackage Microsoft.MicrosoftOfficeHub | Remove-AppxPackage
 Get-AppxPackage Microsoft.Office.OneNote | Remove-AppxPackage
 Get-AppxPackage Microsoft.People | Remove-AppxPackage
