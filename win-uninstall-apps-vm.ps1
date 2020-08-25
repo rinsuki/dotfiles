@@ -23,4 +23,5 @@ Get-AppxPackage Microsoft.WindowsSoundRecorder | Remove-AppxPackage
 Get-AppxPackage Microsoft.WindowsMaps | Remove-AppxPackage
 Get-AppxPackage microsoft.windowscommunicationsapps | Remove-AppxPackage
 Get-AppxPackage Microsoft.Messaging | Remove-AppxPackage
+Get-AppxPackage Microsoft.WindowsCalculator | Remove-AppxPackage
 pause
