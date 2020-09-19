@@ -22,6 +22,7 @@ export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
 export PATH=$HOME/.bin:$PATH
 export PATH=$HOME/.bin/platforms/$(uname | tr '[:upper:]' '[:lower:]'):$PATH
+export PATH=$HOME/.bin.private:$PATH
 export PATH=$PYENV_ROOT/bin:$PATH
 
 # PATH の最後に追加する勢
