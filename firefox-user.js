@@ -4,3 +4,4 @@ user_pref("browser.fixup.alternate.enabled", false);
 user_pref("security.secure_connection_icon_color_gray", false);
 user_pref("font.name.monospace.ja", "Menlo");
 user_pref("general.smoothScroll.mouseWheel.durationMinMS", 200);
+user_pref("media.hardwaremediakeys.enabled", false);
