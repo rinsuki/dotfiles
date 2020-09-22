@@ -5,6 +5,7 @@ if ! git diff --exit-code --quiet HEAD; then
 	echo
 	echo "You have a some local changes."
 	echo "Please commit changes before execute xcbumper"
+	exit 1
 fi
 
 xcrun agvtool bump -all
