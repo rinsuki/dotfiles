@@ -55,3 +55,8 @@ killall -HUP SystemUIServer
 
 defaults write com.apple.Terminal "Default Window Settings" -string Pro
 defaults write com.apple.Terminal "Startup Window Settings" -string Pro
+
+# ---
+defaults write com.google.drivefs.settings BandwidthRxKBPS -int 1000000
+defaults write com.google.drivefs.settings BandwidthTxKBPS -int 1000000
+defaults write com.google.drivefs.settings ForceBrowserAuth -bool true
