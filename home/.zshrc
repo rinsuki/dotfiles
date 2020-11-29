@@ -75,6 +75,7 @@ fi
 ## 雑多
 
 alias be="bundle exec"
+alias yw="yarn workspace"
 
 # その他
 
