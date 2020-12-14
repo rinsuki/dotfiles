@@ -21,11 +21,11 @@ defaults write com.apple.dock persistent-apps -array
 add-persistent-app "$SYSTEM_APPS/Launchpad.app"
 add-persistent-app "$SYSTEM_APPS/QuickTime Player.app"
 add-persistent-app "/Applications/Safari.app"
-add-persistent-app "/Applications/Firefox.app"
+add-persistent-app "/Applications/Firefox Nightly.app"
 add-persistent-app "/Applications/NetNewsWire.app"
 add-persistent-app "$SYSTEM_APPS/Mail.app"
 add-persistent-app "$SYSTEM_APPS/Messages.app"
-add-persistent-app "$SYSTEM_APPS/Utilities/Terminal.app"
+add-persistent-app "/Applications/iTerm.app"
 add-persistent-app "$SYSTEM_APPS/Utilities/Activity Monitor.app"
 add-persistent-app "$SYSTEM_APPS/System Preferences.app"
 if [ -d "$SYSTEM_APPS/Music.app" ]; then
@@ -33,7 +33,7 @@ if [ -d "$SYSTEM_APPS/Music.app" ]; then
 else
     add-persistent-app "/Applications/iTunes.app"
 fi
-add-persistent-app "/Applications/Spotify.app"
+#add-persistent-app "/Applications/Spotify.app"
 add-persistent-app "/Applications/Xcode.app"
 add-persistent-app "/Applications/Visual Studio Code.app"
 add-persistent-app "/Applications/CotEditor.app"
