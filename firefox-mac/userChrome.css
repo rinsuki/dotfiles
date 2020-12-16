@@ -20,7 +20,16 @@
 	}
     #nav-bar {
         -moz-appearance: -moz-mac-vibrancy-light !important;
+	}
+	#TabsToolbar:-moz-lwtheme-brighttext {
+		-moz-appearance: -moz-mac-vibrancy-dark !important;
+	}
+    #nav-bar:-moz-lwtheme-brighttext {
+        -moz-appearance: -moz-mac-vibrancy-dark !important;
     }
+    :root {
+        background: transparent !important;
+	}
 	/* 非アクティブタブのタイトルの色を変更 */
     #TabsToolbar:not(:-moz-lwtheme) {
         color: black !important;
