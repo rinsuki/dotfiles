@@ -1,0 +1,37 @@
+#!/bin/bash
+set -ue
+
+assert-file-not-exists .yarnrc ".yarnrc already exists"
+assert-file-not-exists .yarn ".yarn directory already exists"
+assert-file-not-exists package.json "package.json already exists"
+assert-file-not-exists yarn.lock "yarn.lock already exists"
+
+echo "Setup Yarn V2 (berry) Simple Project in current directory ($(PWD))."
+echo -n "OK? [y/N]: "
+read ANS
+if [ "$ANS" != y ]; then
+    exit 1
+fi
+echo "Start!"
+
+set -x
+
+git init
+yarn set version berry
+echo "enableGlobalCache: true" >> .yarnrc.yml
+yarn init
+yarn add -D typescript
+yarn tsc --init
+yarn dlx @yarnpkg/pnpify --sdk vscode
+node -e 'require("fs").writeFileSync("tsconfig.json", require("fs").readFileSync("tsconfig.json", {encoding: "UTF-8"}).replace(`"target": "es5"`, `"target": "es2020"`).replace(`// "outDir": "./",`, `"outDir": "./dist/",`))'
+echo """dist
+
+# yarn v2
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+.pnp.*
+.vscode
+""" > .gitignore
+
+mkdir -p src
