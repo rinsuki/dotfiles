@@ -15,17 +15,20 @@
 	}
 
 	/* タイトルバースケスケに */
+	.browser-toolbar, #navigator-toolbox {
+		appearance: auto !important;
+	}
 	#TabsToolbar {
-		-moz-appearance: -moz-mac-vibrancy-light !important;
+		-moz-default-appearance: -moz-mac-vibrant-titlebar-light !important;
 	}
     #nav-bar {
-        -moz-appearance: -moz-mac-vibrancy-light !important;
+        -moz-default-appearance: -moz-mac-vibrant-titlebar-light !important;
 	}
 	#TabsToolbar:-moz-lwtheme-brighttext {
-		-moz-appearance: -moz-mac-vibrancy-dark !important;
+		-moz-default-appearance: -moz-mac-vibrant-titlebar-dark !important;
 	}
     #nav-bar:-moz-lwtheme-brighttext {
-        -moz-appearance: -moz-mac-vibrancy-dark !important;
+        -moz-default-appearance: -moz-mac-vibrant-titlebar-dark !important;
     }
     :root {
         background: transparent !important;
