@@ -21,29 +21,29 @@
 	#TabsToolbar {
 		-moz-default-appearance: -moz-mac-vibrant-titlebar-light !important;
 	}
-    #nav-bar {
-        -moz-default-appearance: -moz-mac-vibrant-titlebar-light !important;
+	#nav-bar {
+		-moz-default-appearance: -moz-mac-vibrant-titlebar-light !important;
 	}
 	#TabsToolbar:-moz-lwtheme-brighttext {
 		-moz-default-appearance: -moz-mac-vibrant-titlebar-dark !important;
 	}
-    #nav-bar:-moz-lwtheme-brighttext {
-        -moz-default-appearance: -moz-mac-vibrant-titlebar-dark !important;
-    }
-    :root {
-        background: transparent !important;
+	#nav-bar:-moz-lwtheme-brighttext {
+		-moz-default-appearance: -moz-mac-vibrant-titlebar-dark !important;
+	}
+	:root {
+		background: transparent !important;
 	}
 	/* 非アクティブタブのタイトルの色を変更 */
-    #TabsToolbar:not(:-moz-lwtheme) {
-        color: black !important;
+	#TabsToolbar:not(:-moz-lwtheme) {
+		color: black !important;
 	}
 	/* 信号機ボタンを上に持ってくる */
 	#TabsToolbar > .titlebar-buttonbox-container {
 		margin-top: -74px;
 	}
 	html[tabsintitlebar="true"]:not([OSXLionFullscreen]) #nav-bar {
-        padding-left: 76px;
-    }
+		padding-left: 76px;
+	}
 	/* 信号機ボタンをズラしてできた隙間を埋める */
 	html[tabsintitlebar="true"]:not([OSXLionFullscreen]) #TabsToolbar > .toolbar-items {
 		margin-left: -66px;
@@ -57,19 +57,19 @@
 	}
 
 	/* サイドバーのヘッダーを小さく */
-    #sidebar-header {
-        font-size: 1em !important;
-        padding: 0 !important;
-    }
-    
-    
-    /* タブ間borderを消す */
+	#sidebar-header {
+		font-size: 1em !important;
+		padding: 0 !important;
+	}
+	
+	
+	/* タブ間borderを消す */
 	.tabbrowser-tab::after {
 		border-left: none !important;
 	}
 
-    /* アドレスバーの背景透過 */
-    #urlbar:not([open]) #urlbar-background {
-        opacity: 0.4;
-    }
+	/* アドレスバーの背景透過 */
+	#urlbar:not([open]) #urlbar-background {
+		opacity: 0.4;
+	}
 }
