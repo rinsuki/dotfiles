@@ -18,16 +18,10 @@
 	.browser-toolbar, #navigator-toolbox {
 		appearance: auto !important;
 	}
-	#TabsToolbar {
+	#TabsToolbar, #nav-bar {
 		-moz-default-appearance: -moz-mac-vibrant-titlebar-light !important;
 	}
-	#nav-bar {
-		-moz-default-appearance: -moz-mac-vibrant-titlebar-light !important;
-	}
-	#TabsToolbar:-moz-lwtheme-brighttext {
-		-moz-default-appearance: -moz-mac-vibrant-titlebar-dark !important;
-	}
-	#nav-bar:-moz-lwtheme-brighttext {
+	#TabsToolbar:-moz-lwtheme-brighttext, #nav-bar:-moz-lwtheme-brighttext {
 		-moz-default-appearance: -moz-mac-vibrant-titlebar-dark !important;
 	}
 	:root {
