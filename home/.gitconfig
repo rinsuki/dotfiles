@@ -1,6 +1,7 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	precomposeUnicode = true
+	quotepath = false
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
