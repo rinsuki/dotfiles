@@ -1,0 +1,3 @@
+[submodule "skk/dictionaries/skk-dict-imas"]
+	path = skk/dictionaries/skk-dict-imas
+	url = https://github.com/project-brightblue/skk-dict-imas
