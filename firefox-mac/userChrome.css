@@ -1,69 +1,40 @@
 /* This userChrome.css works ONLY macOS. some styles are broken in Other OS (like Windows). */
 
 @-moz-document url("chrome://browser/content/browser.xhtml") {
-	/* タブの位置をアドレスバーと入れ替え */
-	#navigator-toolbox {
-		display: flex;
-		flex-direction: column;
-	}
-	#titlebar {
-		order: 2;
-	}
-	/* ブックマークツールバーを隠す */
-	#PersonalToolbar {
-		display: none;
-	}
-
-	/* タイトルバースケスケに */
-	.browser-toolbar, #navigator-toolbox {
-		appearance: auto !important;
-	}
-	#TabsToolbar, #nav-bar {
+	/* タブ一覧をスケスケに */
+	#TabsToolbar {
+		appearance: auto;
 		-moz-default-appearance: -moz-mac-vibrant-titlebar-light !important;
+		-moz-font-smoothing-background-color: -moz-mac-source-list !important;
 	}
-	#TabsToolbar:-moz-lwtheme-brighttext, #nav-bar:-moz-lwtheme-brighttext {
+	#TabsToolbar:-moz-lwtheme-brighttext {
 		-moz-default-appearance: -moz-mac-vibrant-titlebar-dark !important;
 	}
-	:root {
+	html, body, #navigator-toolbox {
 		background: transparent !important;
 	}
-	/* 非アクティブタブのタイトルの色を変更 */
-	#TabsToolbar:not(:-moz-lwtheme) {
-		color: black !important;
+	/* アクティブなタブとツールバーをうまいこと繋がってるように見せる */
+	.tab-background {
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+		position: relative;
+		margin-bottom: 0;
 	}
-	/* 信号機ボタンを上に持ってくる */
-	#TabsToolbar > .titlebar-buttonbox-container {
-		margin-top: -74px;
+	.tab-content {
+		padding: 10px 10px !important;
+		margin-top: 2px;
+		margin-bottom: -2px;
 	}
-	html[tabsintitlebar="true"]:not([OSXLionFullscreen]) #nav-bar {
-		padding-left: 76px;
+	.tab-background[multiselected="true"], .tab-background[selected="true"] {
+		background-color: var(--toolbar-bgcolor) !important;
+		background-image: none !important;
 	}
-	/* 信号機ボタンをズラしてできた隙間を埋める */
-	html[tabsintitlebar="true"]:not([OSXLionFullscreen]) #TabsToolbar > .toolbar-items {
-		margin-left: -66px;
+	#nav-bar {
+		margin-top: -1px;
+		border-top: 1px solid var(--chrome-content-separator-color);
 	}
-	#TabsToolbar > .titlebar-spacer {
-		width: 0px !important;
-	}
-	/* タブ間ボーダーを消す */
-	.titlebar-spacer[type="pre-tabs"] {
-		border-inline-end: none !important;
-	}
-
-	/* サイドバーのヘッダーを小さく */
-	#sidebar-header {
-		font-size: 1em !important;
-		padding: 0 !important;
-	}
-	
-	
-	/* タブ間borderを消す */
-	.tabbrowser-tab::after {
-		border-left: none !important;
-	}
-
-	/* アドレスバーの背景透過 */
-	#urlbar:not([open]) #urlbar-background {
-		opacity: 0.4;
+	.tab-context-line {
+		margin: 1px 2px !important;
+		border-radius: 2px 2px 0 0 !important;
 	}
 }
