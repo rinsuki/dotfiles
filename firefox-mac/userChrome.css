@@ -15,10 +15,9 @@
 	}
 	/* アクティブなタブとツールバーをうまいこと繋がってるように見せる */
 	.tab-background {
-		border-bottom-left-radius: 0;
-		border-bottom-right-radius: 0;
-		position: relative;
-		margin-bottom: 0;
+		border-bottom-left-radius: 0 !important;
+		border-bottom-right-radius: 0 !important;
+		margin-bottom: 0 !important;
 	}
 	.tab-content {
 		padding: 10px 10px !important;
