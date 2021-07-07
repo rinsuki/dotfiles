@@ -3,11 +3,10 @@
 @-moz-document url("chrome://browser/content/browser.xhtml") {
 	/* タブ一覧をスケスケに */
 	#TabsToolbar {
-		appearance: auto;
+		appearance: auto !important;
 		-moz-default-appearance: -moz-mac-vibrant-titlebar-light !important;
-		-moz-font-smoothing-background-color: -moz-mac-source-list !important;
 	}
-	#TabsToolbar:-moz-lwtheme-brighttext {
+	#TabsToolbar[brighttext] {
 		-moz-default-appearance: -moz-mac-vibrant-titlebar-dark !important;
 	}
 	html, body, #navigator-toolbox {
@@ -35,5 +34,10 @@
 	.tab-context-line {
 		margin: 1px 2px !important;
 		border-radius: 2px 2px 0 0 !important;
+	}
+	#TabsToolbar[brighttext] .tab-background[multiselected="true"], #TabsToolbar[brighttext] .tab-background[selected="true"] {
+		border: 1px solid var(--chrome-content-separator-color) !important;
+		border-bottom: 0 !important;
+		box-shadow: none !important;
 	}
 }
