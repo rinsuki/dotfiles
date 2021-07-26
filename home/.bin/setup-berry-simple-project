@@ -22,7 +22,7 @@ echo "enableGlobalCache: true" >> .yarnrc.yml
 yarn init
 yarn add -D typescript
 yarn tsc --init
-yarn dlx @yarnpkg/pnpify --sdk vscode
+yarn dlx @yarnpkg/sdks vscode
 node -e 'require("fs").writeFileSync("tsconfig.json", require("fs").readFileSync("tsconfig.json", {encoding: "UTF-8"}).replace(`"target": "es5"`, `"target": "es2020"`).replace(`// "outDir": "./",`, `"outDir": "./dist/",`))'
 echo """dist
 
