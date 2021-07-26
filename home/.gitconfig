@@ -24,3 +24,5 @@
 [user]
 	name = rinsuki
 	email = 428rinsuki+git@gmail.com
+[color]
+	ui = auto
