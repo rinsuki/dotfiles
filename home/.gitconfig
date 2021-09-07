@@ -2,6 +2,7 @@
 	excludesfile = ~/.gitignore_global
 	precomposeUnicode = true
 	quotepath = false
+	editor = nano
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
