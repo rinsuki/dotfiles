@@ -7,3 +7,4 @@ user_pref("general.smoothScroll.mouseWheel.durationMinMS", 200);
 user_pref("media.hardwaremediakeys.enabled", false);
 user_pref("full-screen-api.macos-native-full-screen", true);
 user_pref("widget.non-native-theme.enabled", false);
+user_pref("alerts.useSystemBackend", true);
