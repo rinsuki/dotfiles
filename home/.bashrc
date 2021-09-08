@@ -74,7 +74,12 @@ if type virtualenvwrapper.sh >/dev/null 2>&1; then
 	export WORKON_HOME=~/.virtualenvs
 fi
 
+# mingw
 
+if [[ $UNAME == MINGW* ]]; then
+	alias sudo=gsudo
+	export MSYS=winsymlinks:nativestrict
+fi
 
 # added by travis gem
 [ -f /Users/user/.travis/travis.sh ] && source /Users/user/.travis/travis.sh
