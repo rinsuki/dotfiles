@@ -98,7 +98,9 @@ fpath=($HOME/.asdf/completions $HOME/.local/share/zsh-completions /usr/local/sha
 compinit
 
 ### heroku autocomplete setup
-HEROKU_AC_ZSH_SETUP_PATH=/Users/user/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+if [[ $uname = "Darwin" ]]; then
+    HEROKU_AC_ZSH_SETUP_PATH=$HOME/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+fi
 
 ## git ignore
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
