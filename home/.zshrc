@@ -16,6 +16,8 @@ if [ ! -z $SSH_TTY ]; then
 	export PROMPT="[$(hostname -fs)] $PROMPT"
 fi
 
+uname="$(uname)"
+
 # 履歴周り
 
 export HISTFILE=${HOME}/.zsh_history
@@ -39,7 +41,7 @@ setopt share_history
 
 ## lsに色を付ける
 
-if [ "$(uname)" = "Darwin" ]; then
+if [[ $uname = "Darwin" ]]; then
     alias ls="ls -G"
 else
     alias ls="ls --color=auto"
@@ -53,12 +55,12 @@ fi
 
 ## brew services -> systemctl
 
-if [ "$(uname)" = "Darwin" ]; then
+if [[ $uname = "Darwin" ]]; then
 	alias systemctl="brew services"
 fi
 
 ## sudo必要系を自動で付ける
-if [ "$(uname)" = "Linux" ]; then
+if [[ $uname = "Linux" ]]; then
     alias apt="sudo apt"
 fi
 

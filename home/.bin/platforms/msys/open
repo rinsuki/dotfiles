@@ -1,0 +1,4 @@
+#!/usr/bin/zsh
+export PATH="$OLD_PATH"
+unset PS1 EDITOR SHELL PROMPT
+rundll32 url,OpenURL "$1"

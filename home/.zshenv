@@ -3,17 +3,29 @@
 
 if type uname >/dev/null 2>&1; then
 else
+    if [[ $OLD_PATH = "" ]]; then
+        # .bin/platforms/msys/open 用の msys で汚れてない PATH をメモっておく
+        export OLD_PATH="$PATH"
+    fi
     export PATH="$PATH:/usr/bin"
 fi
 
+uname="$(uname)"
+
 # macOSではPATHが/etc/zprofileによって上書きされるのでそれを回避
 
-if [ "$(uname)" = "Darwin" ]; then
+if [[ $uname = "Darwin" ]]; then
     setopt no_global_rcs
     # system-wide environment settings for zsh(1)
     if [ -x /usr/libexec/path_helper ]; then
         eval `/usr/libexec/path_helper -s`
     fi
+fi
+
+platform_name="$(uname | tr '[:upper:]' '[:lower:]')"
+
+if [[ $platform_name =~ ^msys ]]; then
+    platform_name=msys
 fi
 
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
@@ -27,9 +39,11 @@ export PYENV_ROOT="$HOME/.pyenv"
 
 # PATH の最初に追加する勢
 export PATH=$HOME/.cargo/bin:$PATH
-export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
+if [[ $uname = "Darwin" ]]; then
+    export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
+fi
 export PATH=$HOME/.bin:$PATH
-export PATH=$HOME/.bin/platforms/$(uname | tr '[:upper:]' '[:lower:]'):$PATH
+export PATH=$HOME/.bin/platforms/$platform_name:$PATH
 export PATH=$HOME/.bin.private:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$PYENV_ROOT/bin:$PATH
@@ -41,13 +55,8 @@ export PATH=$PATH:$HOME/work/chromium.googlesource.com/chromium/tools/depot_tool
 export PATH=$PATH:$HOME/.composer/vendor/bin
 export PATH=$PATH:$HOME/flutter/bin
 
-if [ -d /Applications/SeKey.app ]; then
-    export PATH=$PATH:/Applications/SeKey.app/Contents/MacOS
-    export SSH_AUTH_SOCK=$HOME/.sekey/ssh-agent.ssh
-fi
-
 export EDITOR=nano
 
-if [ -f ~/.zshenv.private ]; then
+if [[ -f ~/.zshenv.private ]]; then
     source ~/.zshenv.private
 fi
