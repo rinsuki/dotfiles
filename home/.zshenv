@@ -1,3 +1,11 @@
+# msys2 では .zshenv が /etc/profile に先行してしまうせいでunameとかが存在しないと言われてしまう
+# ので uname がなかったらPATHを通しておく
+
+if type uname >/dev/null 2>&1; then
+else
+    export PATH="$PATH:/usr/bin"
+fi
+
 # macOSではPATHが/etc/zprofileによって上書きされるのでそれを回避
 
 if [ "$(uname)" = "Darwin" ]; then

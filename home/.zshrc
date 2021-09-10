@@ -103,14 +103,14 @@ function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
 ## direnv
 
-test direnv && eval "$(direnv hook zsh)"
+type direnv >/dev/null && eval "$(direnv hook zsh)"
 
 ## fzf
 
 test -f ~/.fzf.zsh && source ~/.fzf.zsh
 
 ## asdf
-source ~/.asdf/asdf.sh
+test -f ~/.asdf/asdf.sh && source ~/.asdf/asdf.sh
 
 ## thefuck
-test fuck && eval $(thefuck --alias)
+type fuck >/dev/null && eval $(thefuck --alias)
