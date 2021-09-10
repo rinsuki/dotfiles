@@ -1,7 +1,5 @@
 UNAME="$(uname)"
 
-echo ":eyes:"
-
 if [[ $UNAME == MSYS* ]]; then
     # Use Windows-style TEMP/TMP
     export TEMP="$ORIGINAL_TEMP"
