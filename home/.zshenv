@@ -17,7 +17,7 @@ uname="$(uname)"
 if [[ $uname = "Darwin" ]]; then
     setopt no_global_rcs
     # system-wide environment settings for zsh(1)
-    if [ -x /usr/libexec/path_helper ]; then
+    if [[ -x /usr/libexec/path_helper ]]; then
         eval `/usr/libexec/path_helper -s`
     fi
 fi

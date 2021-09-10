@@ -8,11 +8,11 @@ autoload -Uz colors compinit
 colors
 
 PROMPT_COLOR="${fg[green]}"
-if [ $USER = "root" ]; then
+if [[ $USER = "root" ]]; then
     PROMPT_COLOR="${fg[red]}"
 fi
 export PROMPT="%{${PROMPT_COLOR}%}%~%{${reset_color}%} $ "
-if [ ! -z $SSH_TTY ]; then
+if [[ ! -z $SSH_TTY ]]; then
 	export PROMPT="[$(hostname -fs)] $PROMPT"
 fi
 
@@ -68,14 +68,14 @@ fi
 if type ghq >/dev/null 2>&1; then
     function g() {
         local cdpath=$(ghq list --full-path | fzf-tmux --reverse +m)
-        if [ -n "$cdpath" ]; then
+        if [[ -n "$cdpath" ]]; then
             cd $cdpath
         fi
     }
     if type code >/dev/null 2>&1; then
         function gcode() {
         local cdpath=$(ghq list --full-path | fzf-tmux --reverse +m)
-            if [ -n "$cdpath" ]; then
+            if [[ -n "$cdpath" ]]; then
                 code $cdpath
             fi
         }
