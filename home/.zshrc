@@ -23,15 +23,19 @@ uname="$(uname)"
 export HISTFILE=${HOME}/.zsh_history
 export HISTSIZE=16544
 export SAVEHIST=165440
+export FZF_DEFAULT_OPTS="--height 40%"
 
-if type peco >/dev/null 2>&1; then
-    function peco-history-search() {
-        BUFFER=`history -n 1 | tail -r| peco`
-        CURSOR=$#BUFFER
+if type fzf >/dev/null 2>&1; then
+    function fzf-history-search() {
+        str=`history -n -r 1 | fzf-tmux --no-sort +m --query "$LBUFFER" --reverse`
+        if [ -n "$str" ]; then
+            BUFFER="$str"
+            CURSOR=$#BUFFER
+        fi
         zle reset-prompt
     }
-    zle -N peco-history-search
-    bindkey '^R' peco-history-search
+    zle -N fzf-history-search
+    bindkey '^R' fzf-history-search
 fi
 
 setopt hist_ignore_space
@@ -95,7 +99,9 @@ setopt correct
 ## completions
 
 fpath=($HOME/.asdf/completions $HOME/.local/share/zsh-completions /usr/local/share/zsh-completions $fpath)
+_cache_hosts=(`sed -n -E 's/^Host +(.+)$/\1/p' ~/.ssh/config`) # ssh hosts の補完をなんとかする
 compinit
+zstyle ':completion:*:ssh:*' users off # ssh users が全部出てきて macOS とかでうざいのをなんとかする
 
 ### heroku autocomplete setup
 if [[ $uname = "Darwin" ]]; then
