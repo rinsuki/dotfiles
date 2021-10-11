@@ -77,8 +77,8 @@ if type ghq >/dev/null 2>&1; then
         fi
     }
     if type code >/dev/null 2>&1; then
-        function gcode() {
-        local cdpath=$(ghq list --full-path | fzf-tmux --reverse +m)
+        function gg() {
+            local cdpath=$(ghq list --full-path | fzf-tmux --reverse +m)
             if [[ -n "$cdpath" ]]; then
                 code $cdpath
             fi
