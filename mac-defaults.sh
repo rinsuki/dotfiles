@@ -45,6 +45,7 @@ killall Dock
 defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
 defaults write com.apple.Finder ShowPathbar -bool true
 defaults write com.apple.Finder ShowStatusBar -bool true
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 defaults write com.apple.menuextra.clock DateFormat -string 'M月d日(EEE)  H:mm:ss' # 8月10日(水) 1:02:03
 defaults write com.apple.menuextra.clock FlashDateSeparators -bool false # mm:ssの間をチカチカさせない
