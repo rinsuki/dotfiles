@@ -43,9 +43,10 @@ add-persistent-app "/Applications/Discord.app"
 
 killall Dock
 
-defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
+defaults write com.apple.finder NewWindowTarget -string PfHm
 defaults write com.apple.Finder ShowPathbar -bool true
 defaults write com.apple.Finder ShowStatusBar -bool true
+defaults write com.apple.Finder _FXSortFoldersFirst -bool true
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 defaults write com.apple.menuextra.clock DateFormat -string 'M月d日(EEE)  H:mm:ss' # 8月10日(水) 1:02:03
