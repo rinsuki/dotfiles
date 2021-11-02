@@ -24,6 +24,8 @@
 		margin-bottom: -2px;
 	}
 	.tab-background[multiselected="true"], .tab-background[selected="true"] {
+		border: 1px solid var(--chrome-content-separator-color) !important;
+		border-bottom: none !important;
 		background-color: var(--toolbar-bgcolor) !important;
 		background-image: none !important;
 	}
@@ -36,8 +38,6 @@
 		border-radius: 2px 2px 0 0 !important;
 	}
 	#TabsToolbar[brighttext] .tab-background[multiselected="true"], #TabsToolbar[brighttext] .tab-background[selected="true"] {
-		border: 1px solid var(--chrome-content-separator-color) !important;
-		border-bottom: 0 !important;
 		box-shadow: none !important;
 	}
 }
