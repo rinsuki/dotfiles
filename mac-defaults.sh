@@ -37,6 +37,7 @@ fi
 add-persistent-app "/Volumes/Xcode13/Applications/Xcode.app"
 add-persistent-app "/Applications/Visual Studio Code.app"
 add-persistent-app "/Applications/CotEditor.app"
+add-persistent-app "/Applications/Hex Fiend.app"
 add-persistent-app "/Applications/Slack.app"
 add-persistent-app "/Applications/Discord.app"
 

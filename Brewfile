@@ -33,6 +33,7 @@ cask "apparency"
 cask "crossover"
 cask "steermouse"
 cask "haptickey" # needs launch
+cask "hex-fiend"
 
 cask "homebrew/cask-drivers/asix-ax88179"
 
