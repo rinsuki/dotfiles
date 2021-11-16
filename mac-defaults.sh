@@ -58,6 +58,7 @@ defaults -currentHost write com.apple.controlcenter BatteryShowPercentage -bool 
 defaults -currentHost write com.apple.controlcenter Sound -int 16 # always show sound/volume item
 defaults -currentHost write com.apple.controlcenter FocusModes -int 16 # always show DnD mode item
 defaults -currentHost write com.apple.Spotlight "MenuItemHidden" -bool true
+defaults write com.apple.HIToolbox AppleDictationAutoEnable -int 0
 
 # no need to kill ControlCenter because Control Center watching defaults and immediately apply new settings.
 
@@ -94,3 +95,6 @@ defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/dotfiles/m
 
 defaults write at.niw.HapticKey ListeningEventType -int 2
 defaults write at.niw.HapticKey FeedbackType -int 2
+
+defaults write ch.sudo.cyberduck connection.dns.ipv6 true
+
