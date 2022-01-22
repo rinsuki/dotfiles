@@ -8,8 +8,8 @@ cask "aquaskk" # needs enable from System Preferences
 cask "hyperswitch" # needs launch
 cask "lulu" # needs launch
 cask "alfred" # needs launch
-cask "firefox"
-cask "firefox-developer-edition"
+#cask "firefox"
+#cask "firefox-developer-edition"
 cask "firefox-nightly"
 cask "iterm2"
 cask "netnewswire"
@@ -19,20 +19,20 @@ cask "keka"
 cask "macfuse"
 cask "wireshark"
 cask "iina"
-cask "background-music"
+#cask "background-music"
 cask "obs"
 cask "blackhole-2ch"
 cask "suspicious-package"
-cask "vmware-fusion"
-cask "jd-gui"
-cask "barrier"
+#cask "vmware-fusion"
+#cask "jd-gui"
+#cask "barrier"
 cask "tg-pro"
 cask "cyberduck"
 cask "proxyman"
 cask "apparency"
 cask "crossover"
 cask "steermouse"
-cask "haptickey" # needs launch
+#cask "haptickey" # needs launch
 cask "hex-fiend"
 cask "paw"
 

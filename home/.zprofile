@@ -7,3 +7,6 @@ if [[ $UNAME == MSYS* ]]; then
     # Delete lower-case temp/tmp because that triggers unrecovable error of Visual Studio
     unset temp tmp
 fi
+if [[ -f /opt/homebrew/bin/brew ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
