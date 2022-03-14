@@ -90,6 +90,7 @@ fi
 
 alias be="bundle exec"
 alias yw="yarn workspace"
+alias lime="haxelib run lime"
 
 # その他
 
