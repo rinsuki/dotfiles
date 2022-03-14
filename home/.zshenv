@@ -34,26 +34,28 @@ export VITASDK=$HOME/.vitasdk
 export THEOS=$HOME/.theos
 export HAXE_STD_PATH="/usr/local/lib/haxe/std"
 
-export PIPENV_VENV_IN_PROJECT=1
-export PYENV_ROOT="$HOME/.pyenv"
-
 # PATH の最初に追加する勢
+path=(
+    "$HOME/.cargo/bin"
+    $path
+)
 export PATH=$HOME/.cargo/bin:$PATH
 if [[ $uname = "Darwin" ]]; then
     export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
 fi
-export PATH=$HOME/.bin:$PATH
-export PATH=$HOME/.bin/platforms/$platform_name:$PATH
-export PATH=$HOME/.bin.private:$PATH
-export PATH=$HOME/.local/bin:$PATH
-export PATH=$PYENV_ROOT/bin:$PATH
-
-# PATH の最後に追加する勢
-export PATH=$PATH:$HOME/go/bin
-export PATH=$PATH:$VITASDK/bin
-export PATH=$PATH:$HOME/work/chromium.googlesource.com/chromium/tools/depot_tools
-export PATH=$PATH:$HOME/.composer/vendor/bin
-export PATH=$PATH:$HOME/flutter/bin
+path=(
+    "$HOME/.bin"
+    "$HOME/.bin/platforms/$platform_name"
+    "$HOME/.bin.private"
+    "$HOME/.local/bin"
+    $path
+    "$HOME/go/bin"
+    "$VITASDK/bin"
+    "$HOME/work/chromium.googlesource.com/chromium/tools/depot_tools"
+    "$HOME/.composer/vendor/bin"
+    "$HOME/flutter/bin"
+)
+export PATH
 
 export EDITOR=nano
 
