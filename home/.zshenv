@@ -43,11 +43,15 @@ export PATH=$HOME/.cargo/bin:$PATH
 if [[ $uname = "Darwin" ]]; then
     export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
 fi
+if [[ -f /opt/homebrew/bin/brew ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 path=(
     "$HOME/.bin"
     "$HOME/.bin/platforms/$platform_name"
     "$HOME/.bin.private"
     "$HOME/.local/bin"
+    "$HOME/.asdf/shims"
     $path
     "$HOME/go/bin"
     "$VITASDK/bin"
