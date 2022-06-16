@@ -29,6 +29,7 @@ if [[ $platform_name =~ ^msys ]]; then
 fi
 
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
+export DENO_TLS_CA_STORE=mozilla,system
 
 export VITASDK=$HOME/.vitasdk
 export THEOS=$HOME/.theos
