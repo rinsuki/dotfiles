@@ -1,17 +1,6 @@
 /* This userChrome.css works ONLY macOS. some styles are broken in Other OS (like Windows). */
 
 @-moz-document url("chrome://browser/content/browser.xhtml") {
-	/* タブ一覧をスケスケに */
-	#TabsToolbar {
-		appearance: auto !important;
-		-moz-default-appearance: -moz-mac-vibrant-titlebar-light !important;
-	}
-	#TabsToolbar[brighttext] {
-		-moz-default-appearance: -moz-mac-vibrant-titlebar-dark !important;
-	}
-	html, body, #navigator-toolbox {
-		background: transparent !important;
-	}
 	/* アクティブなタブとツールバーをうまいこと繋がってるように見せる */
 	.tab-background {
 		border-bottom-left-radius: 0 !important;
