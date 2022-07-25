@@ -4,7 +4,7 @@ user_pref("browser.fixup.alternate.enabled", false);
 user_pref("security.secure_connection_icon_color_gray", false);
 user_pref("font.name.monospace.ja", "Menlo");
 user_pref("general.smoothScroll.mouseWheel.durationMinMS", 200);
-user_pref("media.hardwaremediakeys.enabled", false);
+user_pref("media.hardwaremediakeys.enabled", true);
 user_pref("full-screen-api.macos-native-full-screen", true);
 user_pref("widget.non-native-theme.enabled", false);
 user_pref("alerts.useSystemBackend", true);
