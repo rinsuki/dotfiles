@@ -18,19 +18,48 @@ set -x
 
 git init
 yarn set version berry
-echo "enableGlobalCache: true" >> .yarnrc.yml
 yarn init
-yarn add -D typescript eslint prettier @rinsuki/eslint-config @rinsuki/prettier-config @yarnpkg/pnpify
-echo '{"extends": "@rinsuki"}' > .eslintrc.json
-echo 'module.exports = require("@rinsuki/prettier-config")' > .prettierrc.js
-yarn tsc --init
-yarn pnpify --sdk
+echo """
+import json
+with open('package.json', 'r') as f:
+    pj = json.load(f)
+pj['type'] = 'module'
+pj['scripts'] = {
+    'prettier': 'prettier .',
+    'eslint': 'eslint .',
+    'lint': 'yarn prettier -c && yarn eslint',
+    'fix': 'yarn prettier -w && yarn eslint --fix',
+}
+pj['dependencies'] = {}
+pj['devDependencies'] = {}
+pj['prettier'] = '@rinsuki/prettier-config'
+pj['eslintConfig'] = {'extends': '@rinsuki', 'parserOptions': {'project': ['./tsconfig.json']}}
+with open('package.json', 'w') as f:
+    json.dump(pj, f, indent=4)
+""" | python3
 echo """dist
 
 # yarn v2
 .yarn/*
-!.yarn/releases
+!.yarn/patches
 !.yarn/plugins
+!.yarn/releases
+!.yarn/versions
 .pnp.*
 .vscode
 """ > .gitignore
+
+echo """dist
+.yarn
+.pnp.*" > .prettierignore
+ln -s .prettierignore .eslintignore
+
+yarn add -D typescript eslint prettier @rinsuki/eslint-config @rinsuki/prettier-config
+yarn tsc --init --target es2021 --module node16 --outDir dist --experimentalDecorators --emitDecoratorMetadata --jsx react
+yarn dlx @yarnpkg/sdks vscode
+
+rm .editorconfig
+
+mkdir src
+echo 'console.log("Hello, world!")' > src/index.ts
+yarn fix
