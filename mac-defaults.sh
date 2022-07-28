@@ -1,7 +1,12 @@
 #!/bin/bash
 
+set -e
+
 function add-persistent-app () {
     defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>file://$1</string><key>_CFURLStringType</key><integer>15</integer></dict></dict></dict>"
+}
+function add-persistent-other () {
+    defaults write com.apple.dock persistent-others -array-add "<dict><key>tile-type</key><string>directory-tile</string><key>tile-data</key><dict><key>arrangement</key><integer>2</integer><key>file-data</key><dict><key>_CFURLString</key><string>file://$1</string><key>_CFURLStringType</key><integer>15</integer></dict></dict></dict>"
 }
 
 if [ -d "/System/Applications" ]; then
@@ -18,6 +23,7 @@ defaults write com.apple.dock orientation -string "left"
 defaults write com.apple.dock show-recents -bool false
 defaults write com.apple.dock recent-apps -array
 defaults write com.apple.dock persistent-apps -array
+defaults write com.apple.dock persistent-others -array
 add-persistent-app "$SYSTEM_APPS/Launchpad.app"
 add-persistent-app "$SYSTEM_APPS/QuickTime Player.app"
 add-persistent-app "/Applications/Safari.app"
@@ -38,12 +44,18 @@ else
     add-persistent-app "/Applications/iTunes.app"
 fi
 #add-persistent-app "/Applications/Spotify.app"
-add-persistent-app "/Volumes/Xcode13/Applications/Xcode.app"
+add-persistent-app "/Applications/Xcode.app"
+add-persistent-app "/Applications/Xcode-beta.app"
 add-persistent-app "/Applications/Visual Studio Code.app"
 add-persistent-app "/Applications/CotEditor.app"
 add-persistent-app "/Applications/Hex Fiend.app"
 add-persistent-app "/Applications/Slack.app"
 add-persistent-app "/Applications/Discord.app"
+
+mkdir -p ~/Desktop/screenshots
+
+add-persistent-other ~/Downloads
+add-persistent-other ~/Desktop/screenshots
 
 killall Dock
 
