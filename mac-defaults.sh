@@ -27,7 +27,11 @@ add-persistent-app "$SYSTEM_APPS/Mail.app"
 add-persistent-app "$SYSTEM_APPS/Messages.app"
 add-persistent-app "/Applications/iTerm.app"
 add-persistent-app "$SYSTEM_APPS/Utilities/Activity Monitor.app"
-add-persistent-app "$SYSTEM_APPS/System Preferences.app"
+if [ -d "$SYSTEM_APPS/System Preferences.app" ]; then
+    add-persistent-app "$SYSTEM_APPS/System Preferences.app"
+else
+    add-persistent-app "$SYSTEM_APPS/System Settings.app"
+fi
 if [ -d "$SYSTEM_APPS/Music.app" ]; then
     add-persistent-app "$SYSTEM_APPS/Music.app"
 else
