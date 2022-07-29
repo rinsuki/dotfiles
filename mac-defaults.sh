@@ -77,6 +77,7 @@ defaults write com.apple.menuextra.clock FlashDateSeparators -bool false # mm:ss
 defaults write com.apple.menuextra.clock IsAnalog -bool false # デジタル時計
 
 defaults write com.apple.controlcenter "NSStatusItem Visible Bluetooth" -bool true
+defaults write com.apple.controlcenter "NSStatusItem Visible Shortcuts" -bool true
 defaults -currentHost write com.apple.controlcenter BatteryShowPercentage -bool true
 defaults -currentHost write com.apple.controlcenter Sound -int 16 # always show sound/volume item
 defaults -currentHost write com.apple.controlcenter FocusModes -int 16 # always show DnD mode item
@@ -104,6 +105,9 @@ defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 "<dic
 defaults write com.apple.ActivityMonitor IconType -int 6
 
 # TODO: Disable True Tone
+
+defaults write com.apple.loginwindow TALLogoutSavesState -bool false
+defaults write -g AppleShowScrollBars -string Always
 
 # ---
 defaults write com.google.drivefs.settings BandwidthRxKBPS -int 1000000
