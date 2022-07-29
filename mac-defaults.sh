@@ -15,6 +15,13 @@ else
     SYSTEM_APPS="/Applications"
 fi
 
+if [ -d "/System/Volumes/Preboot/Cryptexes/App/System/Applications" ]; then
+    SAFARI_APPS="/System/Volumes/Preboot/Cryptexes/App/System/Applications"
+else
+    SAFARI_APPS="/Applications"
+fi
+
+
 defaults write com.apple.dock autohide -bool false
 defaults write com.apple.dock tilesize -int 24
 defaults write com.apple.dock magnification -bool true
@@ -26,7 +33,7 @@ defaults write com.apple.dock persistent-apps -array
 defaults write com.apple.dock persistent-others -array
 add-persistent-app "$SYSTEM_APPS/Launchpad.app"
 add-persistent-app "$SYSTEM_APPS/QuickTime Player.app"
-add-persistent-app "/Applications/Safari.app"
+add-persistent-app "$SAFARI_APPS/Safari.app"
 add-persistent-app "/Applications/Firefox Nightly.app"
 add-persistent-app "/Applications/NetNewsWire.app"
 add-persistent-app "$SYSTEM_APPS/Mail.app"
