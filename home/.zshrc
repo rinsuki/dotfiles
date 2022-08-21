@@ -87,12 +87,7 @@ if type ghq >/dev/null 2>&1; then
     fi
 fi
 
-## 雑多
-
-alias be="bundle exec"
-alias yw="yarn workspace"
-alias lime="haxelib run lime"
-alias p="pnpm"
+. ~/.anyshrc
 
 # その他
 

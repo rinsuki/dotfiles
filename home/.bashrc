@@ -81,5 +81,4 @@ if [[ $UNAME == MINGW* ]]; then
 	export MSYS=winsymlinks:nativestrict
 fi
 
-# added by travis gem
-[ -f /Users/user/.travis/travis.sh ] && source /Users/user/.travis/travis.sh
+. ~/.anyshrc
