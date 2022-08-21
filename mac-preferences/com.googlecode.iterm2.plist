@@ -752,6 +752,8 @@
 	<array>
 		<string>Actions</string>
 	</array>
+	<key>Use background pattern indicator</key>
+	<true/>
 	<key>UseBorder</key>
 	<false/>
 	<key>UseLionStyleFullscreen</key>
