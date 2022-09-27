@@ -27,3 +27,5 @@
 	email = 428rinsuki+git@gmail.com
 [color]
 	ui = auto
+[push]
+	default = current

@@ -122,3 +122,6 @@ test -f ~/.asdf/asdf.sh && source ~/.asdf/asdf.sh
 
 ## thefuck
 type fuck >/dev/null && eval $(thefuck --alias)
+
+# bun completions
+[ -s "/opt/homebrew/share/zsh/site-functions/_bun" ] && source "/opt/homebrew/share/zsh/site-functions/_bun"
