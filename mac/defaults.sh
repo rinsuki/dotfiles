@@ -118,7 +118,7 @@ defaults write com.coteditor.CotEditor enablesAutosaveInPlace -int 0
 defaults write com.coteditor.CotEditor fontName -string "Menlo-Regular"
 defaults write com.coteditor.CotEditor fontSize -int 12
 
-defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/dotfiles/mac-preferences"
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/dotfiles/mac/preferences"
 
 defaults write at.niw.HapticKey ListeningEventType -int 2
 defaults write at.niw.HapticKey FeedbackType -int 2
