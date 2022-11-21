@@ -29,4 +29,8 @@
 	#TabsToolbar[brighttext] .tab-background[multiselected="true"], #TabsToolbar[brighttext] .tab-background[selected="true"] {
 		box-shadow: none !important;
 	}
+	/* 新規タブの時に拡張機能であることを示すテキストがうざいので消す */
+	#identity-icon-box > #identity-icon[tooltiptext$=": Custom New Tab Page"] + #identity-icon-label {
+		display: none;
+	}
 }
