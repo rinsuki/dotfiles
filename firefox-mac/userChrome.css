@@ -2,6 +2,7 @@
 
 @-moz-document url("chrome://browser/content/browser.xhtml") {
 	/* アクティブなタブとツールバーをうまいこと繋がってるように見せる */
+/*
 	.tab-background {
 		border-bottom-left-radius: 0 !important;
 		border-bottom-right-radius: 0 !important;
@@ -29,6 +30,7 @@
 	#TabsToolbar[brighttext] .tab-background[multiselected="true"], #TabsToolbar[brighttext] .tab-background[selected="true"] {
 		box-shadow: none !important;
 	}
+*/
 	/* 新規タブの時に拡張機能であることを示すテキストがうざいので消す */
 	#identity-icon-box > #identity-icon[tooltiptext$=": Custom New Tab Page"] + #identity-icon-label {
 		display: none;

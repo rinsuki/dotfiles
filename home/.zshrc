@@ -62,6 +62,7 @@ fi
 
 if [[ $uname = "Darwin" ]]; then
 	alias systemctl="brew services"
+	alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 fi
 
 ## sudo必要系を自動で付ける
