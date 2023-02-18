@@ -99,7 +99,7 @@ setopt correct
 
 type brew &>/dev/null && fpath=("$(brew --prefix)"/share/zsh-completions $fpath)
 fpath=($HOME/.asdf/completions $HOME/.local/share/zsh-completions /usr/local/share/zsh-completions $fpath)
-_cache_hosts=(`sed -n -E 's/^Host +(.+)$/\1/p' ~/.ssh/config`) # ssh hosts の補完をなんとかする
+test -f ~/.ssh/config && _cache_hosts=(`sed -n -E 's/^Host +(.+)$/\1/p' ~/.ssh/config`) # ssh hosts の補完をなんとかする
 compinit
 zstyle ':completion:*:ssh:*' users off # ssh users が全部出てきて macOS とかでうざいのをなんとかする
 
