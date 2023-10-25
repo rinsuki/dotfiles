@@ -18,6 +18,12 @@ fi
 
 uname="$(uname)"
 
+if [[ $uname = "Darwin" ]]; then
+    if [[ "$(sysctl -n sysctl.proc_translated)" = "1" ]]; then
+        export PROMPT="Rosetta: $PROMPT"
+    fi
+fi
+
 # 履歴周り
 
 export HISTFILE=${HOME}/.zsh_history
