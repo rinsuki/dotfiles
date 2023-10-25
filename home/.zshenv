@@ -60,6 +60,16 @@ path=(
     "$HOME/.composer/vendor/bin"
     "$HOME/flutter/bin"
 )
+
+if [[ -d ~/.modular ]]; then
+    export MODULAR_HOME="$HOME/.modular"
+    path=(
+        "$MODULAR_HOME/pkg/packages.modular.com_mojo/bin"
+    )
+
+    export PATH
+fi
+
 export PATH
 
 export EDITOR=nano
