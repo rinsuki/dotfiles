@@ -42,7 +42,6 @@ cask "homebrew/cask-drivers/asix-ax88179"
 #mas "CotEditor", id: 1024640650
 
 brew "ncdu"
-brew "python"
 brew "ghq"
 brew "fzf"
 brew "tmux"
@@ -55,3 +54,4 @@ brew "docker"
 brew "docker-compose"
 brew "p7zip"
 brew "ffmpeg"
+brew "rye"

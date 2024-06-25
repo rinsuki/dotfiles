@@ -36,11 +36,6 @@ export THEOS=$HOME/.theos
 export HAXE_STD_PATH="/usr/local/lib/haxe/std"
 
 # PATH の最初に追加する勢
-path=(
-    "$HOME/.cargo/bin"
-    $path
-)
-export PATH=$HOME/.cargo/bin:$PATH
 if [[ $uname = "Darwin" ]]; then
     export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
 fi
@@ -53,6 +48,8 @@ path=(
     "$HOME/.bin.private"
     "$HOME/.local/bin"
     "$HOME/.asdf/shims"
+    "$HOME/.cargo/bin"
+    "$HOME/.rye/shims"
     $path
     "$HOME/go/bin"
     "$VITASDK/bin"

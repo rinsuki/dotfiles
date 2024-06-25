@@ -133,3 +133,5 @@ type fuck >/dev/null && eval $(thefuck --alias)
 
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
+alias vpm="DOTNET_ROOT=/opt/homebrew/opt/dotnet@6/libexec ~/.dotnet/tools/vpm"
