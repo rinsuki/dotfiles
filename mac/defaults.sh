@@ -23,21 +23,23 @@ fi
 
 
 defaults write com.apple.dock autohide -bool false
-defaults write com.apple.dock tilesize -int 24
+defaults write com.apple.dock tilesize -int 32
 defaults write com.apple.dock magnification -bool true
 defaults write com.apple.dock largesize -int 64
-defaults write com.apple.dock orientation -string "left"
+defaults write com.apple.dock orientation -string "bottom"
 defaults write com.apple.dock show-recents -bool false
 defaults write com.apple.dock recent-apps -array
 defaults write com.apple.dock persistent-apps -array
 defaults write com.apple.dock persistent-others -array
 add-persistent-app "$SYSTEM_APPS/Launchpad.app"
 add-persistent-app "$SYSTEM_APPS/QuickTime Player.app"
+add-persistent-app "/Applications/IINA.app"
 add-persistent-app "$SAFARI_APPS/Safari.app"
+add-persistent-app "/Applications/Google Chrome.app"
 add-persistent-app "/Applications/Firefox Nightly.app"
+add-persistent-app "$SYSTEM_APPS/Messages.app"
 add-persistent-app "/Applications/NetNewsWire.app"
 add-persistent-app "$SYSTEM_APPS/Mail.app"
-add-persistent-app "$SYSTEM_APPS/Messages.app"
 add-persistent-app "/Applications/iTerm.app"
 add-persistent-app "$SYSTEM_APPS/Utilities/Activity Monitor.app"
 if [ -d "$SYSTEM_APPS/System Preferences.app" ]; then
@@ -58,6 +60,8 @@ add-persistent-app "/Applications/CotEditor.app"
 add-persistent-app "/Applications/Hex Fiend.app"
 add-persistent-app "/Applications/Slack.app"
 add-persistent-app "/Applications/Discord.app"
+add-persistent-app "/Applications/XLD.app"
+add-persistent-app "/Applications/MusicBrainz Picard.app"
 
 mkdir -p ~/Desktop/screenshots
 

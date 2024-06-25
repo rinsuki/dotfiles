@@ -1,22 +1,20 @@
 # brew bundle
 
-tap "homebrew/cask"
-tap "homebrew/cask-versions"
-tap "homebrew/cask-drivers"
-
+cask "1password"
 cask "aquaskk" # needs enable from System Preferences
-cask "hyperswitch" # needs launch
+#cask "hyperswitch" # needs launch
 cask "lulu" # needs launch
 cask "alfred" # needs launch
+cask "google-chrome"
 #cask "firefox"
 #cask "firefox-developer-edition"
-cask "firefox-nightly"
+cask "firefox@nightly"
 cask "iterm2"
 cask "netnewswire"
 cask "visual-studio-code"
 cask "discord"
 cask "keka"
-cask "macfuse"
+#cask "macfuse"
 cask "wireshark"
 cask "iina"
 #cask "background-music"
@@ -35,8 +33,10 @@ cask "steermouse"
 #cask "haptickey" # needs launch
 cask "hex-fiend"
 cask "paw"
+cask "musicbrainz-picard"
+cask "xld"
 
-cask "homebrew/cask-drivers/asix-ax88179"
+#cask "homebrew/cask-drivers/asix-ax88179"
 
 #brew "mas"
 #mas "CotEditor", id: 1024640650
@@ -45,13 +45,13 @@ brew "ncdu"
 brew "ghq"
 brew "fzf"
 brew "tmux"
-brew "yarn"
+brew "corepack"
 brew "go"
-brew "gh"
-brew "hub"
+#brew "gh"
+#brew "hub"
 brew "jq"
-brew "docker"
-brew "docker-compose"
-brew "p7zip"
+#brew "docker"
+#brew "docker-compose"
+#brew "p7zip"
 brew "ffmpeg"
 brew "rye"
