@@ -41,6 +41,7 @@ if [[ $uname = "Darwin" ]]; then
 fi
 if [[ -f /opt/homebrew/bin/brew ]]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
+    export REQUESTS_CA_BUNDLE=/opt/homebrew/etc/ca-certificates/cert.pem
 fi
 path=(
     "$HOME/.bin"
