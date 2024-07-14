@@ -71,9 +71,11 @@ add-persistent-other ~/Desktop/screenshots
 killall Dock
 
 defaults write com.apple.finder NewWindowTarget -string PfHm
-defaults write com.apple.Finder ShowPathbar -bool true
-defaults write com.apple.Finder ShowStatusBar -bool true
-defaults write com.apple.Finder _FXSortFoldersFirst -bool true
+defaults write com.apple.finder FXPreferredViewStyle -string Nlsv
+defaults write com.apple.finder ShowPathbar -bool true
+defaults write com.apple.finder ShowStatusBar -bool true
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
+defaults write com.apple.finder _FXSortFoldersFirstOnDesktop -bool true
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 defaults write com.apple.menuextra.clock DateFormat -string 'M月d日(EEE)  H:mm:ss' # 8月10日(水) 1:02:03
@@ -107,6 +109,8 @@ defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 "<dic
 
 # Activity Monitor icon to CPU Usage History Graph
 defaults write com.apple.ActivityMonitor IconType -int 6
+defaults write com.apple.ActivityMonitor ShowCategory -int 100
+defaults write com.apple.ActivityMonitor UpdatePeriod -int 1
 
 # TODO: Disable True Tone
 
@@ -122,10 +126,13 @@ defaults write com.coteditor.CotEditor enablesAutosaveInPlace -int 0
 defaults write com.coteditor.CotEditor fontName -string "Menlo-Regular"
 defaults write com.coteditor.CotEditor fontSize -int 12
 
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/dotfiles/mac/preferences"
+defaults write com.googlecode.iterm2 SUEnableAutomaticChecks -bool true
 
 defaults write at.niw.HapticKey ListeningEventType -int 2
 defaults write at.niw.HapticKey FeedbackType -int 2
 
-defaults write ch.sudo.cyberduck connection.dns.ipv6 true
-
+defaults write ch.sudo.cyberduck connection.dns.ipv6 -bool true
+defaults write ch.sudo.cyberduck queue.download.checksum.calculate -bool true
+defaults write ch.sudo.cyberduck queue.upload.checksum.calculate -bool true
