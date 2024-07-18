@@ -136,3 +136,23 @@ defaults write at.niw.HapticKey FeedbackType -int 2
 defaults write ch.sudo.cyberduck connection.dns.ipv6 -bool true
 defaults write ch.sudo.cyberduck queue.download.checksum.calculate -bool true
 defaults write ch.sudo.cyberduck queue.upload.checksum.calculate -bool true
+
+# NOTE: XLD の設定を削除するには `defaults delete jp.tmkk.XLD; rm ~/Library/Application\ Support/XLD/XLD.plist.backup`
+
+defaults write jp.tmkk.XLD AutoMountDisc -int 1
+defaults write jp.tmkk.XLD AutoQueryCDDB -int 1
+defaults write jp.tmkk.XLD DarkModeSupport -int 1
+defaults write jp.tmkk.XLD CDDBServer -string "" # Only MusicBrainz
+defaults write jp.tmkk.XLD EjectWhenDone -int 1
+defaults write jp.tmkk.XLD FilenameFormat -string '%n(%i) %t'
+defaults write jp.tmkk.XLD FilenameFormatRadio -int 1
+defaults write jp.tmkk.XLD LogControl -int 1
+defaults write jp.tmkk.XLD OutputDir -string "$HOME/Desktop/xld-out"
+mkdir -p ~/Desktop/xld-out
+defaults write jp.tmkk.XLD OutputFormatName -string "Apple Lossless"
+defaults write jp.tmkk.XLD PreferredService -int 1 # MusicBrainz
+defaults write jp.tmkk.XLD SelectOutput -int 1
+defaults write jp.tmkk.XLD ScaleImage -int 0
+defaults write jp.tmkk.XLD TestAndCopy -int 1
+defaults write jp.tmkk.XLD UseC2Pointer -int 1
+defaults write jp.tmkk.XLD VerifySector -int 1
