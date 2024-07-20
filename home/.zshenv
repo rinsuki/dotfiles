@@ -73,6 +73,10 @@ export PATH
 
 export EDITOR=nano
 
+if [[ -f ~/.cargo/env ]]; then
+    source ~/.cargo/env
+fi
+
 if [[ -f ~/.zshenv.private ]]; then
     source ~/.zshenv.private
 fi
