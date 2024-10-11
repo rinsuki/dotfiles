@@ -156,3 +156,5 @@ defaults write jp.tmkk.XLD ScaleImage -int 0
 defaults write jp.tmkk.XLD TestAndCopy -int 1
 defaults write jp.tmkk.XLD UseC2Pointer -int 1
 defaults write jp.tmkk.XLD VerifySector -int 1
+
+defaults write com.apple.dt. IDEPackageSupportUseBuiltinSCM -bool YES
