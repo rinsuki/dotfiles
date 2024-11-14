@@ -19,16 +19,16 @@ cask "wireshark"
 cask "iina"
 #cask "background-music"
 cask "obs"
-cask "blackhole-2ch"
+#cask "blackhole-2ch"
 cask "suspicious-package"
 #cask "vmware-fusion"
 #cask "jd-gui"
 #cask "barrier"
-cask "tg-pro"
+#cask "tg-pro"
 cask "cyberduck"
 cask "proxyman"
 cask "apparency"
-cask "crossover"
+#cask "crossover"
 cask "steermouse"
 #cask "haptickey" # needs launch
 cask "hex-fiend"
@@ -39,7 +39,15 @@ cask "xld"
 #cask "homebrew/cask-drivers/asix-ax88179"
 
 #brew "mas"
-#mas "CotEditor", id: 1024640650
+mas "CotEditor", id: 1024640650
+mas "Velja", id: 1607635845
+mas "1Password for Safari", id: 1569813296
+mas "Tailscale", id: 1475387142
+mas "Redacted", id: 984968384
+mas "WireGuard", id: 1451685025
+mas "Slack for Desktop", id: 803453959
+mas "LadioCast", id: 411213048
+mas "TestFlight", id: 899247664
 
 brew "ncdu"
 brew "ghq"

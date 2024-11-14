@@ -78,10 +78,10 @@ defaults write com.apple.finder _FXSortFoldersFirst -bool true
 defaults write com.apple.finder _FXSortFoldersFirstOnDesktop -bool true
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
-defaults write com.apple.menuextra.clock DateFormat -string 'M月d日(EEE)  H:mm:ss' # 8月10日(水) 1:02:03
 defaults write com.apple.menuextra.clock FlashDateSeparators -bool false # mm:ssの間をチカチカさせない
 defaults write com.apple.menuextra.clock IsAnalog -bool false # デジタル時計
 
+defaults write com.apple.controlcenter "AppleLanguages" -array "ja-JP"
 defaults write com.apple.controlcenter "NSStatusItem Visible Bluetooth" -bool true
 defaults write com.apple.controlcenter "NSStatusItem Visible Shortcuts" -bool true
 defaults -currentHost write com.apple.controlcenter BatteryShowPercentage -bool true
@@ -157,4 +157,5 @@ defaults write jp.tmkk.XLD TestAndCopy -int 1
 defaults write jp.tmkk.XLD UseC2Pointer -int 1
 defaults write jp.tmkk.XLD VerifySector -int 1
 
-defaults write com.apple.dt. IDEPackageSupportUseBuiltinSCM -bool YES
+defaults write com.apple.dt.Xcode IDEFileExtensionDisplayMode -int 1
+defaults write com.apple.dt.Xcode DVTTextShowFoldingSidebar -int 1

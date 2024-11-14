@@ -64,16 +64,8 @@ if type hub >/dev/null 2>&1; then
     alias git=hub
 fi
 
-## brew services -> systemctl
-
 if [[ $uname = "Darwin" ]]; then
-	alias systemctl="brew services"
 	alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
-fi
-
-## sudo必要系を自動で付ける
-if [[ $uname = "Linux" ]]; then
-    alias apt="sudo apt"
 fi
 
 ## ghqのインクリメンタルサーチ
