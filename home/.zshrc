@@ -44,6 +44,7 @@ if type fzf >/dev/null 2>&1; then
     bindkey '^R' fzf-history-search
 fi
 
+setopt extended_history
 setopt hist_ignore_space
 setopt share_history
 setopt nonomatch
