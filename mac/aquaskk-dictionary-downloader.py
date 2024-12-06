@@ -64,7 +64,7 @@ sparql_jisyo: dict[str, str] = {}
 for r in sparql_response:
     key = r["yomi"]["value"]
     value = r["name"]["value"]
-    value += ";[" + r["brand"]["value"] + "]"
+    value += ";[im@sparql] " + r["brand"]["value"]
     if key not in sparql_jisyo:
         sparql_jisyo[key] = "/"
     sparql_jisyo[key] += value + "/"
