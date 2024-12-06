@@ -173,4 +173,15 @@ if [[ ! -f "$AQUASKK_DIR/zenkaku-kigou.rule" ]]; then
 fi
 
 defaults write jp.sourceforge.inputmethod.aquaskk sub_rules -array "$AQUASKK_DIR/zenkaku-kigou.rule"
+defaults write jp.sourceforge.inputmethod.aquaskk enable_dynamic_completion -bool YES
+defaults write jp.sourceforge.inputmethod.aquaskk enable_annotation -bool YES
+defaults write jp.sourceforge.inputmethod.aquaskk dynamic_completion_range -int 3
+
+echo " --- Downloading AquaSKK Dictionaries... ---"
+pushd ../skk
+make clean
+make
+popd
+./aquaskk-dictionary-downloader.py
+echo " --- Done ---"
 killall AquaSKK
