@@ -159,3 +159,18 @@ defaults write jp.tmkk.XLD VerifySector -int 1
 
 defaults write com.apple.dt.Xcode IDEFileExtensionDisplayMode -int 1
 defaults write com.apple.dt.Xcode DVTTextShowFoldingSidebar -int 1
+
+# フルパスなので AQUASKK_DIR 外も書けそうに見えるし、実際書けて動くが、
+# AquaSKKの環境設定ウインドウを開いてすぐ閉じるだけで動かなくなる
+# ので素直に置く
+AQUASKK_DIR="$HOME/Library/Application Support/AquaSKK"
+mkdir -p "$AQUASKK_DIR"
+if [[ ! -f "$AQUASKK_DIR/zenkaku-kigou.rule" ]]; then
+    if [[ -L "$AQUASKK_DIR/zenkaku-kigou.rule" ]]; then
+        rm "$AQUASKK_DIR/zenkaku-kigou.rule"
+    fi
+    ln -s "$HOME/dotfiles/skk/zenkaku-kigou.rule" "$AQUASKK_DIR/"
+fi
+
+defaults write jp.sourceforge.inputmethod.aquaskk sub_rules -array "$AQUASKK_DIR/zenkaku-kigou.rule"
+killall AquaSKK
