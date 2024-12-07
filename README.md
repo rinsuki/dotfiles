@@ -10,28 +10,19 @@
 
 **Requirements:** Python 3.x
 
-
 ### `./mac-hidutil-replace-henkan-key.app`
 
 Mac上でPCキーボードの(無)?変換キーを英数/かなキーに変換する設定をします。
 システム環境設定→ユーザーとグループ→ログイン項目に追加して使うことを想定しています。
 
-### `mac-defaults.sh`
+### `./mac/defaults.sh`
 
 Macの一部設定を自動で変更&適用します
-
-### `mas-install.sh`
-
-`mas`コマンドで Mac App Store からいつも使うアプリ郡をインストールします
-
-**Requirements:** `mas` コマンド (`brew install mas`でインストール可能)、あらかじめ Mac App Store へサインイン済であること
 
 ### `./skk/zenkaku-kigou.rule`
 
 SKKの全角ひらがなモードで全角の記号"！？（）"を出せるようにしたルールです。
-AquaSKKの場合は `./skk-install-to-aquaskk.sh` で追加したあとAquaSKKで"設定ファイルの再読み込み"をし、環境設定→拡張設定で有効化してください
-
-**Requirements:** AquaSKK
+AquaSKK は `./mac/defaults.sh` を実行時に自動で設定されます。
 
 ### `./firefox-user.js`
 
@@ -42,10 +33,6 @@ Firefoxのプロファイル直下に`user.js`としてシンボリックリン�
 
 macOS上で動くFirefox用の`userChrome.css`です。
 Firefoxのプロフィール下の`chrome/userChrome.css`にシンボリックリンクを貼って使います
-
-### `./vivaldi-custom-css/*`
-
-Vivaldi用のカスタムCSSですが、もうVivaldiを使っていないのでメンテナンスされていません
 
 ### `win-uninstall-apps-vm.bat`
 

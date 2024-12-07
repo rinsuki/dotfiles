@@ -1,4 +1,21 @@
 # brew bundle
+brew "deno"
+brew "ncdu"
+brew "ghq"
+brew "fzf"
+brew "tmux"
+# brew "corepack"
+brew "go"
+#brew "gh"
+#brew "hub"
+brew "jq"
+#brew "docker"
+#brew "docker-compose"
+#brew "p7zip"
+brew "ffmpeg"
+brew "rye"
+brew "htop"
+brew "btop"
 
 cask "1password"
 cask "aquaskk" # needs enable from System Preferences
@@ -48,21 +65,4 @@ mas "WireGuard", id: 1451685025
 mas "Slack for Desktop", id: 803453959
 mas "LadioCast", id: 411213048
 mas "TestFlight", id: 899247664
-
-brew "ncdu"
-brew "ghq"
-brew "fzf"
-brew "tmux"
-brew "corepack"
-brew "go"
-#brew "gh"
-#brew "hub"
-brew "jq"
-#brew "docker"
-#brew "docker-compose"
-#brew "p7zip"
-brew "ffmpeg"
-brew "rye"
-brew "htop"
-brew "btop"
-brew "deno"
+mas "CharViewer", id: 1477746848

@@ -1,6 +1,0 @@
-#browser.hasfocus {
-    border-top: 1px solid var(--colorBorder);
-}
-#browser.hasfocus #main {
-    margin-top: -1px;
-}
