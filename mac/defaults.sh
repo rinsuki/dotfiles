@@ -144,7 +144,7 @@ defaults write jp.tmkk.XLD AutoQueryCDDB -int 1
 defaults write jp.tmkk.XLD DarkModeSupport -int 1
 defaults write jp.tmkk.XLD CDDBServer -string "" # Only MusicBrainz
 defaults write jp.tmkk.XLD EjectWhenDone -int 1
-defaults write jp.tmkk.XLD FilenameFormat -string '%n(%i) %t'
+defaults write jp.tmkk.XLD FilenameFormat -string 'y%y_%T_disc%D_id%I_mcn%m_/%n(%i) %t'
 defaults write jp.tmkk.XLD FilenameFormatRadio -int 1
 defaults write jp.tmkk.XLD LogControl -int 1
 defaults write jp.tmkk.XLD OutputDir -string "$HOME/Desktop/xld-out"
