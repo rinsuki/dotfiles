@@ -75,11 +75,11 @@ sparql_jisyo_list.insert(0, ";; okuri-ari entries.")
 sparql_jisyo_list.insert(1, ";; okuri-nasi entries.")
 sparql_jisyo_list.append("")
 sparql_jisyo_str = "\n".join(sparql_jisyo_list)
-write_to_file(AQUASKK_DIR + "/SKK-JISYO.imasparql", sparql_jisyo_str.encode())
+write_to_file(SKK_DEST + "/SKK-JISYO.imasparql.utf8", sparql_jisyo_str.encode())
 
 plist = [
     DictionaryEntry(type=DictionaryType.LocalEUCJP, location=SKK_DEST + "/SKK-JISYO.L.github"),
-    DictionaryEntry(type=DictionaryType.LocalUTF8, location=AQUASKK_DIR + "/SKK-JISYO.imasparql"),
+    DictionaryEntry(type=DictionaryType.LocalUTF8, location=SKK_DEST + "/SKK-JISYO.imasparql.utf8"),
     DictionaryEntry(type=DictionaryType.LocalUTF8, location=SKK_DEST + "/SKK-JISYO.annict.utf8")
 ]
 

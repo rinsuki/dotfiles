@@ -2,3 +2,6 @@
 .DS_Store
 DerivedData
 .envrc
+.claude/*.local.json
+CLAUDE.md
+
