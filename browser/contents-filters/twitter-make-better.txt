@@ -1,0 +1,21 @@
+! premium ad
+||abs.twimg.com/responsive-web/client-web/loader.GetVerifiedSidebar.*.js
+
+||x.com/i/api/graphql/*/SidebarUserRecommendations
+
+||abs.twimg.com/responsive-web/client-web/loader.ExploreSidebar.*.js
+||x.com/i/api/graphql/*/ExploreSidebar
+
+
+! Home (recommended ver)
+||x.com/i/api/graphql/*/HomeTimeline
+
+! telemetry?
+||x.com/i/api/graphql/*/useUpsellTrackingMutation
+
+! ?
+||x.com/i/api/graphql/*/isEligibleForAnalyticsUpsellQuery
+||x.com/i/api/graphql/*/isEligibleForVoButtonUpsellQuery
+
+! telemetry
+||x.com/i/api/1.1/graphql/user_flow.json
