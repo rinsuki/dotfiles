@@ -128,3 +128,4 @@ type fuck >/dev/null && eval $(thefuck --alias)
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 alias vpm="DOTNET_ROOT=/opt/homebrew/opt/dotnet@6/libexec ~/.dotnet/tools/vpm"
+alias claude="/Users/user/.claude/local/claude"

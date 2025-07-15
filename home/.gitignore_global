@@ -4,4 +4,5 @@ DerivedData
 .envrc
 .claude/*.local.json
 CLAUDE.md
+buildServer.json
 

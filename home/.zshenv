@@ -80,3 +80,7 @@ fi
 if [[ -f ~/.zshenv.private ]]; then
     source ~/.zshenv.private
 fi
+
+if [[ -f /opt/homebrew/etc/ca-certificates/cert.pem ]]; then
+    export REQUESTS_CA_BUNDLE=/opt/homebrew/etc/ca-certificates/cert.pem
+fi
