@@ -19,3 +19,6 @@
 
 ! telemetry
 ||x.com/i/api/1.1/graphql/user_flow.json
+
+! "まだ認証されていません" in my profile
+x.com##div:has(> a[href$="/header_photo"]) div[style*="background-color"]:has(a[href="/i/premium_sign_up"])
