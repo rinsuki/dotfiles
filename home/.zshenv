@@ -84,3 +84,5 @@ fi
 if [[ -f /opt/homebrew/etc/ca-certificates/cert.pem ]]; then
     export REQUESTS_CA_BUNDLE=/opt/homebrew/etc/ca-certificates/cert.pem
 fi
+
+export HOMEBREW_VERIFY_ATTESTATIONS=1 # i love security
