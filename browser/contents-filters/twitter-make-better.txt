@@ -22,3 +22,6 @@
 
 ! "まだ認証されていません" in my profile
 x.com##div:has(> a[href$="/header_photo"]) div[style*="background-color"]:has(a[href="/i/premium_sign_up"])
+
+! no sidebar news
+||x.com/i/api/graphql/*/useStoryTopicQuery

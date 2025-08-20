@@ -86,3 +86,5 @@ if [[ -f /opt/homebrew/etc/ca-certificates/cert.pem ]]; then
 fi
 
 export HOMEBREW_VERIFY_ATTESTATIONS=1 # i love security
+export HOMEBREW_DOWNLOAD_CONCURRENCY=auto
+
