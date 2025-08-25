@@ -11,3 +11,4 @@ user_pref("alerts.useSystemBackend", true);
 user_pref("browser.display.windows.non_native_menus", 0);
 user_pref("extensions.pocket.enabled", false);
 user_pref("browser.urlbar.trimURLs", false);
+user_pref("sidebar.verticalTabs", true);
