@@ -5,4 +5,4 @@ DerivedData
 .claude/*.local.json
 CLAUDE.md
 buildServer.json
-
+!local.*/
