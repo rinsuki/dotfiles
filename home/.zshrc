@@ -1,7 +1,8 @@
 # bindkey
 
 bindkey "^[[3~" delete-char
-
+bindkey '^[[1;3D' backward-word
+bindkey '^[[1;3C' forward-word
 # プロンプト
 
 autoload -Uz colors compinit
