@@ -1,0 +1,37 @@
+#!/usr/bin/env python3
+import os
+import subprocess
+
+def walk(dir: str, depth: int):
+    if os.path.isdir(dir + "/.git"):
+        # TODO: check diff
+        gp = subprocess.Popen(["git", "-C", dir, "status", "--porcelain=1"], stdout=subprocess.PIPE)
+        assert gp.stdout is not None
+        line = gp.stdout.readline()
+        gp.kill()
+        if line != b"":
+            print("Has uncommitted changes: ", dir)
+            return
+        return
+    if dir.endswith("/vmwork"):
+        depth += 1
+    there_are_any_subdir = False
+    there_are_files = False
+    if depth > 0:
+        for entry in os.listdir(dir):
+            full_path = os.path.join(dir, entry)
+            if os.path.isdir(full_path):
+                walk(full_path, depth - 1)
+                there_are_any_subdir = True
+    if not there_are_any_subdir:
+        for entry in os.listdir(dir):
+            if entry == ".DS_Store":
+                continue
+            full_path = os.path.join(dir, entry)
+            if os.path.isfile(full_path):
+                there_are_files = True
+                break
+        if there_are_files:
+            print("Doesn't have a git repository: ", dir)
+
+walk(os.environ["HOME"] + "/work", 3)
