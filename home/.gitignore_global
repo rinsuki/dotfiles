@@ -6,3 +6,5 @@ DerivedData
 CLAUDE.md
 buildServer.json
 !local.*/
+.direnv
+
