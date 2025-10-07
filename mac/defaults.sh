@@ -31,6 +31,7 @@ defaults write com.apple.dock show-recents -bool false
 defaults write com.apple.dock recent-apps -array
 defaults write com.apple.dock persistent-apps -array
 defaults write com.apple.dock persistent-others -array
+defaults write com.apple.dock showhidden -bool true
 add-persistent-app "$SYSTEM_APPS/Launchpad.app"
 add-persistent-app "$SYSTEM_APPS/QuickTime Player.app"
 add-persistent-app "/Applications/IINA.app"
@@ -72,11 +73,13 @@ killall Dock
 
 defaults write com.apple.finder NewWindowTarget -string PfHm
 defaults write com.apple.finder FXPreferredViewStyle -string Nlsv
+defaults write com.apple.finder FXDefaultSearchScope -string SCcf # デフォルトで現在のフォルダから検索
 defaults write com.apple.finder ShowPathbar -bool true
 defaults write com.apple.finder ShowStatusBar -bool true
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
 defaults write com.apple.finder _FXSortFoldersFirstOnDesktop -bool true
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 defaults write com.apple.menuextra.clock FlashDateSeparators -bool false # mm:ssの間をチカチカさせない
 defaults write com.apple.menuextra.clock IsAnalog -bool false # デジタル時計
@@ -116,6 +119,8 @@ defaults write com.apple.ActivityMonitor UpdatePeriod -int 1
 
 defaults write com.apple.loginwindow TALLogoutSavesState -bool false
 defaults write -g AppleShowScrollBars -string Always
+
+defaults write -g _NS_4445425547 -bool true
 
 # ---
 defaults write com.google.drivefs.settings BandwidthRxKBPS -int 1000000
