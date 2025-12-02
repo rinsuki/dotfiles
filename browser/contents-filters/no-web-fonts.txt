@@ -1,0 +1,1 @@
+||use.typekit.net$script,redirect=typekit-replace.js
