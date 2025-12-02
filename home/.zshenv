@@ -50,7 +50,6 @@ path=(
     "$HOME/.local/bin"
     "$HOME/.asdf/shims"
     "$HOME/.cargo/bin"
-    "$HOME/.rye/shims"
     "$HOME/.nix-profile/bin"
     $path
     "$HOME/go/bin"
