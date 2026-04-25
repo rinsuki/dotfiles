@@ -94,6 +94,12 @@ if type ghq >/dev/null 2>&1; then
     fi
 fi
 
+if [[ $uname = "Darwin" ]]; then
+    if [[ -f /usr/local/bin/brew ]] && [[ -f /opt/homebrew/bin/brew ]]; then
+        alias intelbrew=/usr/local/bin/brew
+    fi
+fi
+
 . ~/.anyshrc
 
 # その他
