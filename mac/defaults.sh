@@ -23,9 +23,9 @@ fi
 
 
 defaults write com.apple.dock autohide -bool false
-defaults write com.apple.dock tilesize -int 32
+defaults write com.apple.dock tilesize -int 64
 defaults write com.apple.dock magnification -bool true
-defaults write com.apple.dock largesize -int 64
+defaults write com.apple.dock largesize -int 128
 defaults write com.apple.dock orientation -string "bottom"
 defaults write com.apple.dock show-recents -bool false
 defaults write com.apple.dock recent-apps -array
