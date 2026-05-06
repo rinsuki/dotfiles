@@ -3,7 +3,7 @@ const coreasar = require("./core.asar")
 const path = require("node:path")
 
 try {
-    const injected = require(path.join(process.env.HOME, "dotfiles", "discord", "main", "injected", "index.js"))
+    const injected = require(path.join(process.env.HOME, "dotfiles", "apps", "discord", "main", "injected", "index.js"))
     injected(coreasar)
 } catch(e) {
     try {
