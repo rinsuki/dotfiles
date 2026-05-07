@@ -84,6 +84,15 @@ const ENGINES = {
             href: "https://musicbrainz.org/search?type=recording&method=indexed&query={searchTerms}"
         }
     },
+    "@mbwork": {
+        name: "MusicBrainz: Works",
+        url: {
+            icon: {
+                "32": "https://musicbrainz.org/static/images/entity/work.svg",
+            },
+            href: "https://musicbrainz.org/search?type=work&method=indexed&query={searchTerms}"
+        }
+    },
     "@spoalbum": {
         name: "Spotify: Albums",
         url: {
@@ -92,7 +101,25 @@ const ENGINES = {
             },
             href: "https://open.spotify.com/search/{searchTerms}/albums"
         },
-    }
+    },
+    "@mercari": {
+        name: "Mercari (JP)",
+        url: {
+            icon: {
+                "32": "https://web-jp-assets-v2.mercdn.net/_next/static/media/favicon.cbb38c8b.ico",
+            },
+            href: "https://jp.mercari.com/search?keyword={searchTerms}"
+        }
+    },
+    "@yac": {
+        name: "Yahoo Auctions (JP)",
+        url: {
+            icon: {
+                "32": "https://auctions.yahoo.co.jp/favicon.ico",
+            },
+            href: "https://auctions.yahoo.co.jp/search/search?p={searchTerms}"
+        }
+    },
 }
 
 const DISABLED_IDS = ["yahoo-jp", "rakuten"]
