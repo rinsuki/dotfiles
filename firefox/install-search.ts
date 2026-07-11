@@ -57,42 +57,33 @@ const ENGINES = {
             href: "https://isrceam.rinsuki.net/apple/jp/search?q={searchTerms}"
         }
     },
-    "@mbrel": {
-        name: "MusicBrainz: Releases",
-        url: {
-            icon: {
-                "32": "https://musicbrainz.org/static/images/entity/release.png",
-            },
-            href: "https://musicbrainz.org/search?type=release&method=indexed&query={searchTerms}"
-        }
-    },
-    "@mbartist": {
-        name: "MusicBrainz: Artists",
-        url: {
-            icon: {
-                "32": "https://musicbrainz.org/static/images/entity/artist.png",
-            },
-            href: "https://musicbrainz.org/search?type=artist&method=indexed&query={searchTerms}"
-        }
-    },
-    "@mbrec": {
-        name: "MusicBrainz: Recordings",
-        url: {
-            icon: {
-                "32": "https://musicbrainz.org/static/images/entity/recording.png",
-            },
-            href: "https://musicbrainz.org/search?type=recording&method=indexed&query={searchTerms}"
-        }
-    },
-    "@mbwork": {
-        name: "MusicBrainz: Works",
-        url: {
-            icon: {
-                "32": "https://musicbrainz.org/static/images/entity/work.svg",
-            },
-            href: "https://musicbrainz.org/search?type=work&method=indexed&query={searchTerms}"
-        }
-    },
+    ...(Object.fromEntries(
+        ([
+            ["mbrel", "Releases", "release"],
+            ["mbrg", "Release Groups", "release_group"],
+            ["mbartist", "Artists", "artist"],
+            ["mbrec", "Recordings", "recording"],
+            ["mbwork", "Works", "work"],
+            ["mbseries", "Series", "series"],
+            ["mbevent", "Event", "event"],
+            ["mblabel", "Label", "label"],
+            ["mbplace", "Place", "place"],
+            ["mbarea", "Area", "area"],
+        ] as const).map(v => {
+            return [
+                "@" + v[0],
+                {
+                    name: "MusicBrainz: " + v[1],
+                    url: {
+                        icon: {
+                            "32": `https://musicbrainz.org/static/images/entity/${v[2]}.svg`
+                        },
+                        href: `https://musicbrainz.org/search?type=${v[2]}}&method=advanced&query={searchTerms}`
+                    },
+                }
+            ]
+        })
+    )),
     "@spoalbum": {
         name: "Spotify: Albums",
         url: {
@@ -120,6 +111,24 @@ const ENGINES = {
             href: "https://auctions.yahoo.co.jp/search/search?p={searchTerms}"
         }
     },
+    "@ghcode": {
+        name: "GitHub: Code",
+        url: {
+            icon: {
+                "32": "https://github.githubassets.com/favicons/favicon.svg",
+            },
+            href: "https://github.com/search?q={searchTerms}&type=code"
+        }
+    },
+    "@ghrepo": {
+        name: "GitHub: Code",
+        url: {
+            icon: {
+                "32": "https://github.githubassets.com/favicons/favicon.svg",
+            },
+            href: "https://github.com/search?q={searchTerms}&type=repositories"
+        }
+    }
 }
 
 const DISABLED_IDS = ["yahoo-jp", "rakuten"]
@@ -150,7 +159,8 @@ if (decompressed.length !== decompressedSize) {
 }
 const text = new TextDecoder().decode(decompressed)
 const json = JSON.parse(text)
-if (json.version !== 13) {
+console.log(json)
+if (json.version !== 13 && json.version !== 14) {
     throw new Error(`Unsupported search.json version: ${json.version}`)
 }
 console.log(json)
