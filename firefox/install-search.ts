@@ -78,7 +78,7 @@ const ENGINES = {
                         icon: {
                             "32": `https://musicbrainz.org/static/images/entity/${v[2]}.svg`
                         },
-                        href: `https://musicbrainz.org/search?type=${v[2]}}&method=advanced&query={searchTerms}`
+                        href: `https://musicbrainz.org/search?type=${v[2]}&method=advanced&query={searchTerms}`
                     },
                 }
             ]
