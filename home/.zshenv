@@ -87,4 +87,6 @@ fi
 
 export HOMEBREW_VERIFY_ATTESTATIONS=1 # i love security
 export HOMEBREW_DOWNLOAD_CONCURRENCY=auto
-
+if [[ $uname = "Darwin" ]]; then
+    export CARGO_BUILD_BUILD_DIR=~/Library/Caches/cargo-build-dir
+fi
