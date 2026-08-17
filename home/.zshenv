@@ -90,3 +90,5 @@ export HOMEBREW_DOWNLOAD_CONCURRENCY=auto
 if [[ $uname = "Darwin" ]]; then
     export CARGO_BUILD_BUILD_DIR=~/Library/Caches/cargo-build-dir
 fi
+
+export GIT_CONFIG_GLOBAL=~/dotfiles/home/.gitconfig # workaround of https://github.com/openai/codex/issues/34530
