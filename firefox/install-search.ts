@@ -128,7 +128,16 @@ const ENGINES = {
             },
             href: "https://github.com/search?q={searchTerms}&type=repositories"
         }
-    }
+    },
+    "@gp": {
+        name: "ChatGPT (Temporary)",
+        url: {
+            icon: {
+                "32": "https://chatgpt.com/cdn/assets/favicon-eex17e9e.ico",
+            },
+            href: "https://chatgpt.com/?temporary-chat=true&prompt={searchTerms}"
+        }
+    },
 }
 
 const DISABLED_IDS = ["yahoo-jp", "rakuten"]

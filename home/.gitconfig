@@ -12,7 +12,7 @@
 [url "git@github.com:"]
 	pushInsteadOf = https://github.com/
 [url "git@gitlab.com:"]
-	insteadOf = https://gitlab.com/
+	pushInsteadOf = https://gitlab.com/
 [url "git@git.pleroma.social:"]
 	insteadOf = https://git.pleroma.social/
 [ghq]

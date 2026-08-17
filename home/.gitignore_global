@@ -8,4 +8,4 @@ CLAUDE.md
 buildServer.json
 !local.*/
 .direnv
-
+AGENTS.override.md
