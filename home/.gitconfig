@@ -18,6 +18,7 @@
 [ghq]
 	root = ~/go/src
 	root = ~/work
+	root = ~/dotfiles
 [pull]
 	rebase = true
 [include]
