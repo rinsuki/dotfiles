@@ -36,6 +36,8 @@ plutil -convert xml1 - -o ~/Library/LaunchAgents/net.rinsuki.dotfiles.nosolarium
 }
 EOF
 
+# NSAlert の背景が透明になるのを修正
+defaults write -g NSAlertGlassSolariumEnabled -bool false
 # WindowServerのSolariumが有効なのにアプリが有効でない時、NSStatusItem (メニューバーの右側) にアイテムが出なくなるのを修正
 defaults write -g NSStatusItemUseControlCenter -bool true
 
