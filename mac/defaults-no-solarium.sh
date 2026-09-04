@@ -28,7 +28,7 @@ plutil -convert xml1 - -o ~/Library/LaunchAgents/net.rinsuki.dotfiles.nosolarium
     "ProgramArguments": [
         "/bin/bash",
         "-c",
-        "/bin/launchctl setenv FEATUREFLAGS_DISABLED SwiftUI/Solarium"
+        "/bin/launchctl setenv FEATUREFLAGS_DISABLED SwiftUI/Solarium; /bin/launchctl kickstart system/net.rinsuki.dotfiles.nosolarium.u$(id -u)"
     ],
     "ProcessType": "Interactive",
     "RunAtLoad": true,
@@ -39,10 +39,17 @@ EOF
 # WindowServerのSolariumが有効なのにアプリが有効でない時、NSStatusItem (メニューバーの右側) にアイテムが出なくなるのを修正
 defaults write -g NSStatusItemUseControlCenter -bool true
 
-# TODO: Finder にこれを自動で反映させる方法を見つける
-# `sudo launchctl debug gui/$(id -u)/com.apple.Finder --environment FEATUREFLAGS_DISABLED=SwiftUI/Solarium` してから
-# `launchctl kickstart -k gui/$(id -u)/com.apple.Finder` すれば反映されるが、`sudo launchctl debug` なしだと反映されない
-# sudoers に一筆書いたら動くだろうが、そういうことはしたくない……
+# Finder にはなんか反映されないので root で launchctl debug を呼んで反映させる
+sudo plutil -convert xml1 - -o /Library/LaunchDaemons/net.rinsuki.dotfiles.nosolarium.u$(id -u).plist <<EOF
+{
+    "ProgramArguments": [
+        "/bin/bash",
+        "-c",
+        "/bin/launchctl debug gui/$(id -u)/com.apple.Finder --environment FEATUREFLAGS_DISABLED=SwiftUI/Solarium; launchctl kickstart -k gui/$(id -u)/com.apple.Finder"
+    ],
+    "Label": "net.rinsuki.dotfiles.nosolarium.u$(id -u)"
+}
+EOF
 
 # 余談: 逆にグローバルで Solarium を切った後に Dock とかだけ Solarium を有効化して起動したらいいんじゃないか? と思うかもしれないが、
 # 通知センターやコントロールセンターは SIP で守られていて環境変数を起動時に設定できなかった (ためボツになった)。あと WindowServer は再起動できないし……
