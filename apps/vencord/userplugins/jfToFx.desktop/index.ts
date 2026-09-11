@@ -193,7 +193,7 @@ export default definePlugin({
 
     checkEmbeds(message: Message) {
         for (const embed of message.embeds) {
-            console.log(embed);
+            // console.log(embed);
             if (embed.image != null && embed.image.url.startsWith("https://jf.x.com/images/media-preview/")) {
                 fetchAndUpdateTweetsEmbed(message).catch(e => {
                     console.error("Failed to update tweets embed:", e);
