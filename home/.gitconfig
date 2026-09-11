@@ -1,5 +1,5 @@
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = ~/dotfiles/home/.gitignore_global
 	precomposeUnicode = true
 	quotepath = false
 	editor = nano
