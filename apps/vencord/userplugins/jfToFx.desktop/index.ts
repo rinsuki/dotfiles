@@ -25,7 +25,7 @@ type FxMedia = {
     height: number,
     url: string,
 } | {
-    type: "video",
+    type: "video" | "gif",
     format: string,
     width: number,
     height: number,
@@ -51,7 +51,7 @@ function fxMediaToDiscordEmbed(fxMedia: FxMedia, baseMedia: EmbedMedia): Partial
             ...overwrittenBase,
             images: [base],
         };
-    } else if (fxMedia.type === "video") {
+    } else if (fxMedia.type === "video" || fxMedia.type === "gif") {
         return {
             ...overwrittenBase,
             video: base,
@@ -62,7 +62,7 @@ function fxMediaToDiscordEmbed(fxMedia: FxMedia, baseMedia: EmbedMedia): Partial
             }
         };
     } else {
-        return {};
+        return overwrittenBase;
     }
 }
 
