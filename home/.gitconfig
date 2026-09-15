@@ -17,8 +17,8 @@
 	insteadOf = https://git.pleroma.social/
 [ghq]
 	root = ~/go/src
-	root = ~/work
 	root = ~/dotfiles
+	root = ~/work
 [pull]
 	rebase = true
 [include]
