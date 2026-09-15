@@ -1,26 +1,24 @@
 # brew bundle
+brew "node"
 brew "deno"
 brew "ncdu"
 brew "ghq"
 brew "fzf"
 brew "tmux"
-# brew "corepack"
+brew "pnpm"
 brew "go"
 #brew "gh"
 #brew "hub"
 brew "jq"
-#brew "docker"
-#brew "docker-compose"
-#brew "p7zip"
-brew "ffmpeg"
-brew "rye"
+brew "ffmpeg-full"
+brew "uv"
 brew "htop"
 brew "btop"
 
 cask "1password"
-cask "aquaskk" # needs enable from System Preferences
+#cask "aquaskk" # needs enable from System Preferences
 #cask "hyperswitch" # needs launch
-cask "lulu" # needs launch
+#cask "lulu" # needs launch
 cask "alfred" # needs launch
 cask "google-chrome"
 #cask "firefox"
@@ -43,7 +41,7 @@ cask "suspicious-package"
 #cask "barrier"
 #cask "tg-pro"
 cask "cyberduck"
-cask "proxyman"
+#cask "proxyman"
 cask "apparency"
 #cask "crossover"
 cask "steermouse"

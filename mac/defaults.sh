@@ -32,7 +32,12 @@ defaults write com.apple.dock recent-apps -array
 defaults write com.apple.dock persistent-apps -array
 defaults write com.apple.dock persistent-others -array
 defaults write com.apple.dock showhidden -bool true
-add-persistent-app "$SYSTEM_APPS/Launchpad.app"
+
+if [ -d "$SYSTEM_APPS/Apps.app" ]; then
+    add-persistent-app "$SYSTEM_APPS/Apps.app"
+else
+    add-persistent-app "$SYSTEM_APPS/Launchpad.app"
+fi
 add-persistent-app "$SYSTEM_APPS/QuickTime Player.app"
 add-persistent-app "/Applications/IINA.app"
 add-persistent-app "$SAFARI_APPS/Safari.app"

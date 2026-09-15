@@ -34,7 +34,7 @@ const ENGINES = {
         name: "Cargo Crates",
         url: {
             icon: {
-                "16": "https://crates.io/assets/cargo.png",
+                "16": "https://crates.io/favicon.ico",
             },
             href: "https://crates.io/search?q={searchTerms}"
         }
