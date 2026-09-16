@@ -41,6 +41,7 @@ config["permissions"] = {
                 "Cargo.toml": "read",
                 "package.json": "read",
                 "node_modules": "read",
+                ".sqlx/**": "read",
             }
         },
         "network": {
@@ -75,6 +76,20 @@ config["features"] = {
         "hide_spawn_agent_metadata": False,
         "tool_namespace": "agents",
     }
+}
+
+config["hooks"] = {
+    "PostToolUse": [
+        {
+            "matcher": "^Bash$",
+            "hooks": [{
+                "type": "command",
+                "command": '~/dotfiles/home/.bin/hooks/check-rust-sqlx-fail.py',
+                "timeout": 30,
+                "statusMessage": "check-rust-sqlx-fail",
+            }]
+        }
+    ]
 }
 
 with open(os.environ["HOME"] + "/.codex/config.toml.new", "w") as f:

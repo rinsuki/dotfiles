@@ -1,0 +1,1 @@
+prefix_rule(pattern=["cargo", "sqlx", "prepare"], decision="allow")
