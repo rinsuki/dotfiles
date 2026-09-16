@@ -2,3 +2,4 @@ Brewfile.lock.json
 skk/dest/*
 !.gitkeep
 node_modules
+.python-version
