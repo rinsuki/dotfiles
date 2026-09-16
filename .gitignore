@@ -3,3 +3,4 @@ skk/dest/*
 !.gitkeep
 node_modules
 .python-version
+*.pyc

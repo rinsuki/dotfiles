@@ -16,6 +16,8 @@ brew "ffmpeg-full"
 brew "uv"
 brew "htop"
 brew "btop"
+brew "sqlx-cli"
+brew "ripgrep"
 
 cask "1password"
 #cask "aquaskk" # needs enable from System Preferences
