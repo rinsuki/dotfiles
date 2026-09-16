@@ -79,6 +79,17 @@ config["features"] = {
 }
 
 config["hooks"] = {
+    "PreToolUse": [
+        {
+            "matcher": "^Bash$",
+            "hooks": [{
+                "type": "command",
+                "command": '~/dotfiles/home/.bin/hooks/deny-cargo-build-dir.py',
+                "timeout": 30,
+                "statusMessage": "deny-cargo-build-dir",
+            }]
+        }
+    ],
     "PostToolUse": [
         {
             "matcher": "^Bash$",
