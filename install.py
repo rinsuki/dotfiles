@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import os
 import sys
-import platform
 import subprocess
 
 NOW_DIR = os.path.dirname(os.path.realpath(__file__))
