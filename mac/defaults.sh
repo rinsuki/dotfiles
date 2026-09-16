@@ -125,6 +125,16 @@ defaults write com.apple.ActivityMonitor UpdatePeriod -int 1
 defaults write com.apple.loginwindow TALLogoutSavesState -bool false
 defaults write -g AppleShowScrollBars -string Always
 
+defaults write com.apple.Accessibility KeyRepeatInterval -float 0.03333333299999999
+
+defaults write com.apple.Music showAppleMusic -bool false
+defaults write com.apple.Music showStatusBar -bool true
+
+defaults write com.apple.DiskUtility SidebarShowAllDevices -bool true
+defaults write com.apple.DiskUtility WorkspaceShowAPFSSnapshots -bool true
+defaults write com.apple.DiskUtility "OperationProgress DetailsVisible" -bool true
+
+
 defaults write -g _NS_4445425547 -bool true
 
 # ---
