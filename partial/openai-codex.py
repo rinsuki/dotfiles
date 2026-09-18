@@ -45,8 +45,19 @@ config["permissions"] = {
             }
         },
         "network": {
-            "enabled": False,
+            "enabled": True,
         },
+    }
+}
+
+config["features"] = {
+    "js_repl": True,
+    "apps": False,
+    "network_proxy": True,
+
+    "multi_agent_v2": {
+        "hide_spawn_agent_metadata": False,
+        "tool_namespace": "agents",
     }
 }
 
