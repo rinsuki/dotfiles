@@ -1,3 +1,5 @@
+import platform
+
 import tomlkit
 import os
 
@@ -12,17 +14,30 @@ config["model_reasoning_summary"] = "detailed"
 config["default_permissions"] = "editor_base"
 config["include_permissions_instructions"] = False
 
+os_perms = {}
+if platform.system() == "Darwin":
+    os_perms = {
+        "/Library": "read",
+        "/System/Cryptexes": "read",
+        "/Applications": "read",
+        "/System/Volumes/Preboot": "read",
+        "/System/Library/OpenSSL": "read",
+        "/opt/homebrew": "read",
+        "~/Library/Caches/cargo-build-dir": "write",
+    }
+elif platform.system() == "Linux":
+    os_perms = {
+        "/usr": "read",
+        "/nix": "read",
+    }
+
 config["permissions"] = {
     "editor_base": {
         "filesystem": {
             ":minimal": "read",
             ":tmpdir": "write",
-            "/Library": "read",
-            "/System/Cryptexes": "read",
-            "/Applications": "read",
-            "/System/Volumes/Preboot": "read",
-            "/System/Library/OpenSSL": "read",
-            "/opt/homebrew": "read",
+
+            **os_perms,
 
             "~/dotfiles": "read",
             "~/.cargo": "read",
@@ -34,7 +49,6 @@ config["permissions"] = {
             "~/.rustup": "read",
             "~/go/bin": "read",
 
-            "~/Library/Caches/cargo-build-dir": "write",
             ":workspace_roots": {
                 ".": "write",
                 "Cargo.lock": "read",
