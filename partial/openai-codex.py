@@ -68,17 +68,8 @@ config["tui"] = {
     "animations": False,
 }
 
-config["features"] = {
-    "js_repl": True,
-    "apps": False,
-
-    "multi_agent_v2": {
-        "hide_spawn_agent_metadata": False,
-        "tool_namespace": "agents",
-    }
-}
-
 config["hooks"] = {
+    "state": config.get("hooks", {}).get("state"),
     "PreToolUse": [
         {
             "matcher": "^Bash$",
