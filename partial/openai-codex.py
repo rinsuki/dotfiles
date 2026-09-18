@@ -94,7 +94,7 @@ config["tui"] = {
 }
 
 config["hooks"] = {
-    "state": config.get("hooks", {}).get("state"),
+    "state": config.get("hooks", {}).get("state", {}),
     "PreToolUse": [
         {
             "matcher": "^Bash$",
