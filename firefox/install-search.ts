@@ -138,6 +138,15 @@ const ENGINES = {
             href: "https://chatgpt.com/?temporary-chat=true&prompt={searchTerms}"
         }
     },
+    "@nix": {
+        name: "Nix Packages",
+        url: {
+            icon: {
+                "32": "https://search.nixos.org/images/nixos-logomark-default-gradient-none.svg",
+            },
+            href: "https://search.nixos.org/packages?channel=unstable&query={searchTerms}",
+        }
+    }
 }
 
 const DISABLED_IDS = ["yahoo-jp", "rakuten"]
